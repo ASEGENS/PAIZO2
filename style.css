@@ -1,31 +1,60 @@
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Couleur de fond neutre */
+    color: #333; /* Couleur du texte principal */
 }
 
+/* Navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: #d4af37; /* Couleur dorée pour les liens de la navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #fff; /* Couleur blanche pour le lien actif */
+}
+
+.navbar-dark .navbar-brand {
+    color: #d4af37; /* Couleur dorée pour la marque */
+}
+
+/* Hero Section */
 .hero {
     position: relative;
     color: white;
     text-align: center;
+    background-color: #355e3b; /* Vert foncé pour le fond */
 }
 
 .hero .btn {
-    margin-top: 20px;
+    background-color: #d4af37; /* Bouton doré */
+    border: none;
 }
 
-.about img {
-    border-radius: 10px;
+/* About Section */
+.about {
+    background-color: #ece5b6; /* Beige clair pour le fond */
+}
+
+.about h2, .about p {
+    color: #333; /* Couleur du texte */
+}
+
+/* Features Section */
+.features {
+    background-color: #4b5320; /* Vert olive pour le fond */
+    color: #fff; /* Texte blanc */
 }
 
 .features i {
-    color: #ff6f61;
+    color: #d4af37; /* Icônes dorées */
 }
 
-.features h3 {
-    margin-top: 15px;
+/* Gallery Section */
+.gallery {
+    background-color: #ece5b6; /* Beige clair pour le fond */
 }
 
 .gallery img {
-    margin-bottom: 20px;
     border-radius: 10px;
     transition: transform 0.2s;
 }
@@ -34,6 +63,31 @@ body {
     transform: scale(1.05);
 }
 
+/* Footer */
 .footer {
-    background-color: #2c3e50;
+    background-color: #355e3b; /* Vert foncé pour le fond */
+    color: white; /* Texte blanc */
+}
+
+/* Cards */
+.card {
+    background-color: #f8f5f2; /* Fond clair pour les cartes */
+    border: none;
+}
+
+.card-title {
+    color: #333; /* Couleur du titre */
+}
+
+.card-text {
+    color: #666; /* Couleur du texte */
+}
+
+.btn-primary {
+    background-color: #d4af37; /* Boutons dorés */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #c9a227; /* Boutons dorés foncés */
 }
