@@ -3,48 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Bootstrap</title>
+    <title>Pathfinder 2 - Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mon Site</a>
+            <a class="navbar-brand" href="#">Pathfinder 2</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link active" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">À propos</a>
+                        <a class="nav-link" href="#">Règles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Personnages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Section 1</h2>
-                <p>Contenu de la section 1.</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Section 2</h2>
-                <p>Contenu de la section 2.</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Section 3</h2>
-                <p>Contenu de la section 3.</p>
+
+    <!-- Hero Section -->
+    <section class="hero text-white text-center" style="background: url('images/pathfinder-hero.jpg') no-repeat center center; background-size: cover; height: 60vh;">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <h1 class="display-3">Bienvenue dans l'univers de Pathfinder 2</h1>
+            <p class="lead">Explorez des aventures épiques et créez des personnages légendaires.</p>
+            <a href="#" class="btn btn-primary btn-lg">Commencez votre aventure</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>À propos de Pathfinder 2</h2>
+                    <p>Pathfinder 2 est un jeu de rôle épique qui vous permet de créer des personnages uniques et de vivre des aventures incroyables. Explorez des terres fantastiques, affrontez des créatures mythiques et utilisez des compétences et des sorts puissants.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/pathfinder-about.jpg" class="img-fluid" alt="Pathfinder 2">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-dragon fa-3x mb-3"></i>
+                    <h3>Créatures Épiques</h3>
+                    <p>Affrontez des créatures mythiques et gagnez des trésors fabuleux.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-magic fa-3x mb-3"></i>
+                    <h3>Sorts Puissants</h3>
+                    <p>Lancez des sorts puissants pour défaire vos ennemis et aider vos alliés.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                    <h3>Cartes Interactives</h3>
+                    <p>Explorez des cartes détaillées et découvrez des secrets cachés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Galerie d'Images</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/gallery1.jpg" class="img-fluid" alt="Galerie 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/gallery2.jpg" class="img-fluid" alt="Galerie 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/gallery3.jpg" class="img-fluid" alt="Galerie 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p>&copy; 2024 Pathfinder 2. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

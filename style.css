@@ -1,11 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-.container {
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero .btn {
     margin-top: 20px;
 }
 
-.navbar-brand {
-    font-weight: bold;
+.about img {
+    border-radius: 10px;
+}
+
+.features i {
+    color: #ff6f61;
+}
+
+.features h3 {
+    margin-top: 15px;
+}
+
+.gallery img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: #2c3e50;
 }
