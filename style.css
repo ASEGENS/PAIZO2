@@ -20,7 +20,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    color: white;
+    color: rgb(57, 57, 57);
     text-align: center;
     background-color: #355e3b; /* Vert foncé pour le fond */
 }
