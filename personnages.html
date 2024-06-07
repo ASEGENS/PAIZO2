@@ -23,7 +23,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Règles</a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item">
                         <a class="nav-link active" href="personnages.html">Personnages</a>
                     </li>
                     <li class="nav-item">
@@ -39,7 +39,10 @@
 
     <!-- Introduction Section -->
     <section class="intro py-5 text-center text-white" style="background: url('img/bg.png') no-repeat center center; background-size: cover; height: 30vh;">
-        
+        <div class="container">
+            <h1 class="display-4">Créer votre Personnage</h1>
+            <p class="lead">Découvrez les classes disponibles dans Pathfinder 2 Remastered et créez un héros unique.</p>
+        </div>
     </section>
 
     <!-- Classes Section -->
@@ -71,22 +74,29 @@
         </div>
     </footer>
 
+    <!-- Modals -->
+    <div id="modals-container">
+        <!-- Les modals seront insérés ici par JavaScript -->
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            Papa.parse('classes.csv', {
+            Papa.parse('classes2.csv', {
                 download: true,
                 header: true,
                 complete: function(results) {
                     const data = results.data;
                     const container = document.getElementById('classes-container');
-                    data.forEach(function(row) {
+                    const modalsContainer = document.getElementById('modals-container');
+
+                    data.forEach(function(row, index) {
                         const col = document.createElement('div');
                         col.className = 'col-md-4';
                         col.innerHTML = `
-                            <div class="card mb-4">
+                            <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modal${index}">
                                 <img src="images/${row.image}" class="card-img-top" alt="${row.nom}">
                                 <div class="card-body">
                                     <h5 class="card-title">${row.nom}</h5>
@@ -95,9 +105,49 @@
                             </div>
                         `;
                         container.appendChild(col);
+
+                        const modal = document.createElement('div');
+                        modal.className = 'modal fade';
+                        modal.id = `modal${index}`;
+                        modal.tabIndex = -1;
+                        modal.setAttribute('aria-labelledby', `modalLabel${index}`);
+                        modal.setAttribute('aria-hidden', 'true');
+                        modal.innerHTML = `
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel${index}">${row.nom}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Description:</strong> ${row.description}</p>
+                                        <p><strong>Stat préférée:</strong> ${row.stat_preferree}</p>
+                                        <p><strong>École de magie:</strong> ${row.ecole_magie || 'N/A'}</p>
+                                        <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
+                                        <p><strong>Détails:</strong> ${row.details}</p>
+                                        <div>
+                                            <p><strong>Attaque:</strong> ${createProgressBar(row.attaque)}</p>
+                                            <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite)}</p>
+                                            <p><strong>Support:</strong> ${createProgressBar(row.support)}</p>
+                                            <p><strong>Utilitaire:</strong> ${createProgressBar(row.utilitaire)}</p>
+                                            <p><strong>Difficulté:</strong> ${createProgressBar(row.difficulte)}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        modalsContainer.appendChild(modal);
                     });
                 }
             });
+
+            function createProgressBar(value) {
+                return `
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: ${value * 10}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="10">${value}/10</div>
+                    </div>
+                `;
+            }
         });
     </script>
 </body>
