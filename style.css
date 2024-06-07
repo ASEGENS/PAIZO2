@@ -2,19 +2,29 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Couleur de fond neutre */
     color: #333; /* Couleur du texte principal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Navbar */
 .navbar-dark .navbar-nav .nav-link {
     color: #d4af37; /* Couleur dorée pour les liens de la navbar */
+    transition: color 0.3s ease;
 }
 
+.navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #fff; /* Couleur blanche pour le lien actif */
+    color: #fff; /* Couleur blanche pour le lien actif et au survol */
 }
 
 .navbar-dark .navbar-brand {
     color: #d4af37; /* Couleur dorée pour la marque */
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #fff; /* Couleur blanche au survol */
 }
 
 /* Hero Section */
@@ -23,22 +33,120 @@ body {
     color: rgb(57, 57, 57);
     text-align: center;
     background-color: #355e3b; /* Vert foncé pour le fond */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .hero .btn {
     background-color: #d4af37; /* Bouton doré */
     border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #c9a227; /* Bouton doré foncé au survol */
+    transform: scale(1.05);
 }
 
 /* About Section */
 .about {
     background-color: #ece5b6; /* Beige clair pour le fond */
+    padding: 3rem 0;
 }
 
-.about h2, .about p {
+.about h2 {
     color: #333; /* Couleur du texte */
+    margin-bottom: 1.5rem;
+}
+
+.about p {
+    color: #666; /* Couleur du texte */
 }
 
 /* Features Section */
 .features {
-    background-color: #4b
+    background-color: #4b5320; /* Vert olive pour le fond */
+    color: #fff; /* Texte blanc */
+    padding: 3rem 0;
+}
+
+.features i {
+    color: #d4af37; /* Icônes dorées */
+    margin-bottom: 1rem;
+}
+
+.features h3 {
+    margin-bottom: 1rem;
+}
+
+.features p {
+    color: #ccc;
+}
+
+/* Gallery Section */
+.gallery {
+    background-color: #ece5b6; /* Beige clair pour le fond */
+    padding: 3rem 0;
+}
+
+.gallery img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: #355e3b; /* Vert foncé pour le fond */
+    color: white; /* Texte blanc */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Cards */
+.card {
+    background-color: #f8f5f2; /* Fond clair pour les cartes */
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    color: #333; /* Couleur du titre */
+}
+
+.card-text {
+    color: #666; /* Couleur du texte */
+}
+
+.btn-primary {
+    background-color: #d4af37; /* Boutons dorés */
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c9a227; /* Boutons dorés foncés */
+    transform: scale(1.05);
+}
