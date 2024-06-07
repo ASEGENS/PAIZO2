@@ -40,6 +40,23 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 1rem;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre du texte */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre du texte */
 }
 
 .hero .btn {
@@ -55,6 +72,7 @@ body {
     background-color: #c9a227; /* Bouton doré foncé au survol */
     transform: scale(1.05);
 }
+
 
 /* About Section */
 .about {
