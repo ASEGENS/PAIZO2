@@ -1,24 +1,24 @@
-nom,description,image
-Alchimiste,Les alchimistes utilisent des potions et des explosifs pour transformer et manipuler la matière,alchimiste.jpg
-Barbare,Les barbares sont des guerriers sauvages, utilisant leur rage pour infliger des dégâts massifs à leurs ennemis,barbare.jpg
-Guerrier,Les guerriers sont des maîtres du combat physique, utilisant des armes et des armures pour dominer leurs adversaires,guerrier.jpg
-Investigateur,Les investigateurs utilisent leur intellect et leurs compétences de déduction pour résoudre des mystères et traquer les criminels,investigateur.jpg
-Psychique,Les psychiques utilisent la puissance de leur esprit pour manipuler l'environnement et influencer les autres,psychique.jpg
-Rôdeur,Les rôdeurs sont des experts en survie et en pistage, excellant dans la chasse aux créatures dangereuses,rodeur.jpg
-Barde,Les bardes utilisent la musique et la magie pour inspirer leurs alliés et déstabiliser leurs ennemis,barde.jpg
-Champion,Les champions sont des guerriers sacrés, protégeant les innocents et punissant les ennemis de leur foi,champion.jpg
-Kinétiste,Les kinétistes canalisent l'énergie élémentaire pour infliger des dégâts et manipuler l'environnement,kinetiste.jpg
-Magus,Les magus combinent la maîtrise des armes et de la magie pour créer un style de combat unique,magus.jpg
-Voleur,Les voleurs sont des experts en discrétion et agilité, capables de se faufiler dans les endroits les plus sécurisés,voleur.jpg
-Sorcier,Les sorciers utilisent la magie innée pour lancer des sorts puissants et influencer le destin,sorcier.jpg
-Clerc,Les clercs sont des serviteurs des dieux, utilisant leur foi pour soigner les blessures et punir les ennemis,clerc.jpg
-Druide,Les druides sont des protecteurs de la nature, utilisant la magie naturelle pour défendre et guérir,druide.jpg
-Moine,Les moines sont des combattants disciplinés, utilisant des techniques de combat à mains nues et des arts martiaux,moine.jpg
-Oracle,Les oracles sont des prophètes mystiques, utilisant des visions divines pour guider et protéger,oracle.jpg
-Invocateur,Les invocateurs appellent des créatures d'autres plans pour les assister au combat et dans leurs aventures,invocateur.jpg
-Bretteur,Les bretteurs sont des duellistes élégants, utilisant la rapidité et la précision pour vaincre leurs adversaires,bretteur.jpg
-Thaumaturge,Les thaumaturges utilisent des rituels et des artefacts magiques pour accomplir des exploits surnaturels,thaumaturge.jpg
-Sorcière,Les sorcières utilisent des pactes et des malédictions pour exercer leur pouvoir magique,sorciere.jpg
-Magicien,Les magiciens sont des experts de la magie, utilisant leurs sorts pour vaincre les ennemis et protéger leurs alliés,magicien.jpg
-Pistolier,Les pistoliers utilisent des armes à feu pour infliger des dégâts à distance avec précision et puissance,pistolier.jpg
-Inventeur,Les inventeurs utilisent leur génie et leur créativité pour créer des gadgets et des machines innovantes,inventeur.jpg
+nom,description,image,stat_preferree,ecole_magie,type_magie,details,attaque,survivabilite,support,utilitaire,difficulte
+Alchimiste,Les alchimistes utilisent des potions et des explosifs pour transformer et manipuler la matière,alchimiste.jpg,Intelligence,,,Les alchimistes préparent des concoctions diverses et variées...,6,5,7,6,4
+Barbare,Les barbares sont des guerriers sauvages utilisant leur rage pour infliger des dégâts massifs à leurs ennemis,barbare.jpg,Force,,,Le barbare est un combattant sauvage...,8,7,3,4,5
+Guerrier,Les guerriers sont des maîtres du combat physique utilisant des armes et des armures pour dominer leurs adversaires,guerrier.jpg,Force,,,Le guerrier est un expert en armes...,8,9,2,3,4
+Investigateur,Les investigateurs utilisent leur intellect et leurs compétences de déduction pour résoudre des mystères et traquer les criminels,investigateur.jpg,Intelligence,,,L'investigateur est un détective hors pair...,4,6,5,8,6
+Psychique,Les psychiques utilisent la puissance de leur esprit pour manipuler l'environnement et influencer les autres,psychique.jpg,Sagesse,,Spontané,Le psychique utilise la magie mentale...,5,4,6,7,7
+Rôdeur,Les rôdeurs sont des experts en survie et en pistage excellant dans la chasse aux créatures dangereuses,rodeur.jpg,Dextérité,Primal,Préparé,Le rôdeur est un chasseur aguerri...,7,7,4,6,5
+Barde,Les bardes utilisent la musique et la magie pour inspirer leurs alliés et déstabiliser leurs ennemis,barde.jpg,Charisme,Occult,Spontané,Le barde est un artiste magique...,5,5,7,8,6
+Champion,Les champions sont des guerriers sacrés protégeant les innocents et punissant les ennemis de leur foi,champion.jpg,Charisme,,Préparé,Le champion est un paladin de la justice...,7,8,6,5,4
+Kinétiste,Les kinétistes canalisent l'énergie élémentaire pour infliger des dégâts et manipuler l'environnement,kinetiste.jpg,Constitution,,,Le kinétiste maîtrise les éléments...,6,6,5,7,6
+Magus,Les magus combinent la maîtrise des armes et de la magie pour créer un style de combat unique,magus.jpg,Intelligence,Arcane,Préparé,Le magus est un combattant magique...,7,6,4,6,7
+Voleur,Les voleurs sont des experts en discrétion et agilité capables de se faufiler dans les endroits les plus sécurisés,voleur.jpg,Dextérité,,,Le voleur excelle dans l'art de la furtivité...,6,4,5,8,4
+Sorcier,Les sorciers utilisent la magie innée pour lancer des sorts puissants et influencer le destin,sorcier.jpg,Charisme,Arcane,Spontané,Le sorcier est un maître de la magie innée...,7,5,6,7,6
+Clerc,Les clercs sont des serviteurs des dieux utilisant leur foi pour soigner les blessures et punir les ennemis,clerc.jpg,Sagesse,Divin,Préparé,Le clerc est un guérisseur divin...,5,7,8,6,5
+Druide,Les druides sont des protecteurs de la nature utilisant la magie naturelle pour défendre et guérir,druide.jpg,Sagesse,Primal,Préparé,Le druide utilise la magie de la nature...,5,6,7,8,6
+Moine,Les moines sont des combattants disciplinés utilisant des techniques de combat à mains nues et des arts martiaux,moine.jpg,Dextérité,,,Le moine est un expert en arts martiaux...,7,8,4,5,6
+Oracle,Les oracles sont des prophètes mystiques utilisant des visions divines pour guider et protéger,oracle.jpg,Charisme,Divin,Spontané,L'oracle est un voyant mystique...,5,5,6,7,7
+Invocateur,Les invocateurs appellent des créatures d'autres plans pour les assister au combat et dans leurs aventures,invocateur.jpg,Charisme,Occult,Spontané,L'invocateur invoque des créatures magiques...,6,5,7,7,6
+Bretteur,Les bretteurs sont des duellistes élégants utilisant la rapidité et la précision pour vaincre leurs adversaires,bretteur.jpg,Dextérité,,,Le bretteur est un maître du duel...,7,5,3,6,5
+Thaumaturge,Les thaumaturges utilisent des rituels et des artefacts magiques pour accomplir des exploits surnaturels,thaumaturge.jpg,Intelligence,Occult,Préparé,Le thaumaturge est un érudit des arcanes...,6,5,6,7,7
+Sorcière,Les sorcières utilisent des pactes et des malédictions pour exercer leur pouvoir magique,sorciere.jpg,Intelligence,Occult,Préparé,La sorcière lance des malédictions puissantes...,6,5,6,8,6
+Magicien,Les magiciens sont des experts de la magie utilisant leurs sorts pour vaincre les ennemis et protéger leurs alliés,magicien.jpg,Intelligence,Arcane,Préparé,Le magicien est un érudit magique...,7,4,5,7,6
+Pistolier,Les pistoliers utilisent des armes à feu pour infliger des dégâts à distance avec précision et puissance,pistolier.jpg,Dextérité,,,Le pistolier est un expert en armes à feu...,7,5,4,6,5
+Inventeur,Les inventeurs utilisent leur génie et leur créativité pour créer des gadgets et des machines innovantes,inventeur.jpg,Intelligence,,,L'inventeur crée des machines ingénieuses...,6,6,5,7,6
