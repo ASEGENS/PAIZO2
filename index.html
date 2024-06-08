@@ -9,58 +9,15 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Pathfinder 2</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Accueil</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Personnages
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="CréationP.html">Créer un Personnage</a></li>
-                            <li><a class="dropdown-item" href="personnages.html">Classes</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGolarion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Golarion
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownGolarion">
-                            <li><a class="dropdown-item" href="golarion.html">Lore</a></li>
-                            <li><a class="dropdown-item" href="map.html">Carte</a></li>
-                            <li><a class="dropdown-item" href="factions.html">Factions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Règles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="hero text-white text-center" style="background: url('img/bg.png') no-repeat center center; background-size: cover; height: 60vh;">
         <div class="d-flex flex-column justify-content-center align-items-center h-100">
             <h1 class="display-3">Bienvenue dans l'univers de Pathfinder 2</h1>
-            <!-- <p class="lead">Explorez des aventures épiques et créez des personnages légendaires.</p> -->
             <a href="CréationP.html" class="btn btn-primary btn-lg">Commencez votre aventure</a>
         </div>
     </section>
-
-
 
     <!-- About Section -->
     <section class="about py-5 bg-light">
@@ -79,7 +36,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Features Section -->
     <section class="features py-5">
@@ -104,7 +60,6 @@
         </div>
     </section>
 
-
     <!-- Gallery Section -->
     <section class="gallery py-5 bg-light">
         <div class="container">
@@ -123,16 +78,26 @@
         </div>
     </section>
 
-
     <!-- Footer -->
-    <footer class="footer py-4 bg-dark text-white text-center">
-        <div class="container">
-            <p>&copy; 2024 Pathfinder 2. Tous droits réservés.</p>
-        </div>
-    </footer>
-
+    <div id="footer-container"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to load HTML from external files
+        function loadHTML(elementId, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+
+        // Load the navbar and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('navbar-container', 'navbar.html');
+            loadHTML('footer-container', 'footer.html');
+        });
+    </script>
 </body>
 </html>
