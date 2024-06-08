@@ -30,6 +30,31 @@ body {
     color: #fff;
 }
 
+/* Ajout de styles pour éviter le chevauchement */
+.navbar-nav {
+    flex-direction: row; /* Assurez-vous que les éléments sont alignés en ligne */
+}
+
+.nav-item {
+    margin-left: 10px; /* Espacement entre les éléments de navigation */
+}
+
+/* Assurez-vous que le menu déroulant se comporte correctement */
+.dropdown-menu {
+    background-color: #333; /* Couleur de fond du menu déroulant */
+    color: #fff;
+}
+
+.dropdown-item {
+    color: #d4af37;
+}
+
+.dropdown-item:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+
 /* Hero Section */
 .hero {
     position: relative;
