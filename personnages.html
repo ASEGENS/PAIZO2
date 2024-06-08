@@ -67,7 +67,7 @@
         </div>
     </section>
 
-        <!-- Links Section -->
+    <!-- Links Section -->
     <section class="links py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Ressources Utiles</h2>
@@ -124,24 +124,26 @@
                         modal.setAttribute('aria-labelledby', `modalLabel${index}`);
                         modal.setAttribute('aria-hidden', 'true');
                         modal.innerHTML = `
-                            <div class="modal-dialog modal-lg">
+                            <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="modalLabel${index}">${row.nom}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-4 text-center">
-                                                <img src="img/${row.image}" class="img-fluid mb-3" alt="${row.nom}">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <p><strong>Description:</strong> ${row.description}</p>
-                                                <p><strong>Stat préférée:</strong> ${row.stat_preferree}</p>
-                                                <p><strong>École de magie:</strong> ${row.ecole_magie || 'N/A'}</p>
-                                                <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
-                                                <p><strong>Détails:</strong> ${row.details}</p>
-                                                <div>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-4 text-center">
+                                                    <img src="img/${row.image}" class="img-fluid mb-3" alt="${row.nom}">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p><strong>Description:</strong> ${row.description}</p>
+                                                    <p><strong>Stat préférée:</strong> ${row.stat_preferree}</p>
+                                                    <p><strong>École de magie:</strong> ${row.ecole_magie || 'N/A'}</p>
+                                                    <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
+                                                    <p><strong>Détails:</strong> ${row.details}</p>
+                                                </div>
+                                                <div class="col-md-4">
                                                     <p><strong>Attaque:</strong> ${createProgressBar(row.attaque, 'attaque')}</p>
                                                     <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite, 'survivabilite')}</p>
                                                     <p><strong>Support:</strong> ${createProgressBar(row.support, 'support')}</p>
@@ -170,6 +172,7 @@
                 
                 return `
                     <div class="progress">
+                        <div class="progress-bar ${typeClass}" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
                         <div class="progress-bar ${typeClass}" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
                     </div>
                 `;
