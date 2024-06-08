@@ -39,10 +39,10 @@
 
     <!-- Introduction Section -->
     <section class="intro py-5 text-center text-white" style="background: url('img/bg.png') no-repeat center center; background-size: cover; height: 30vh;">
-        <!-- <div class="container">
+        <div class="container">
             <h1 class="display-4">Créer votre Personnage</h1>
             <p class="lead">Découvrez les classes disponibles dans Pathfinder 2 Remastered et créez un héros unique.</p>
-        </div> -->
+        </div>
     </section>
 
     <!-- Classes Section -->
@@ -119,17 +119,24 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p><strong>Description:</strong> ${row.description}</p>
-                                        <p><strong>Stat préférée:</strong> ${row.stat_preferree}</p>
-                                        <p><strong>École de magie:</strong> ${row.ecole_magie || 'N/A'}</p>
-                                        <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
-                                        <p><strong>Détails:</strong> ${row.details}</p>
-                                        <div>
-                                            <p><strong>Attaque:</strong> ${createProgressBar(row.attaque)}</p>
-                                            <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite)}</p>
-                                            <p><strong>Support:</strong> ${createProgressBar(row.support)}</p>
-                                            <p><strong>Utilitaire:</strong> ${createProgressBar(row.utilitaire)}</p>
-                                            <p><strong>Difficulté:</strong> ${createProgressBar(row.difficulte)}</p>
+                                        <div class="row">
+                                            <div class="col-md-4 text-center">
+                                                <img src="images/${row.image}" class="img-fluid mb-3" alt="${row.nom}">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p><strong>Description:</strong> ${row.description}</p>
+                                                <p><strong>Stat préférée:</strong> ${row.stat_preferree}</p>
+                                                <p><strong>École de magie:</strong> ${row.ecole_magie || 'N/A'}</p>
+                                                <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
+                                                <p><strong>Détails:</strong> ${row.details}</p>
+                                                <div>
+                                                    <p><strong>Attaque:</strong> ${createProgressBar(row.attaque)}</p>
+                                                    <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite)}</p>
+                                                    <p><strong>Support:</strong> ${createProgressBar(row.support)}</p>
+                                                    <p><strong>Utilitaire:</strong> ${createProgressBar(row.utilitaire)}</p>
+                                                    <p><strong>Difficulté:</strong> ${createProgressBar(row.difficulte)}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +150,7 @@
             function createProgressBar(value) {
                 return `
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: ${value * 10}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
+                        <div class="progress-bar" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
                     </div>
                 `;
             }
