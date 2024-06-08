@@ -183,3 +183,24 @@ body {
     background-color: #c9a227;
     transform: scale(1.05);
 }
+
+/* Barre de progression personnalisée */
+.progress-bar-attaque {
+    background-color: #dc3545; /* Rouge pour attaque */
+}
+
+.progress-bar-survivabilite {
+    background-color: #007bff; /* Bleu pour survivabilité */
+}
+
+.progress-bar-support {
+    background-color: #28a745; /* Vert pour support */
+}
+
+.progress-bar-utilitaire {
+    background-color: #e83e8c; /* Rose pour utilitaire */
+}
+
+.progress-bar-difficulte {
+    background-color: #ffc107; /* Jaune pour difficulté */
+}

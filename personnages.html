@@ -43,8 +43,7 @@
                         <a class="nav-link" href="#">Règles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
-                    </li>
+                        <a class="nav-link" href="#">Contacts</a></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +57,6 @@
         </div>
     </section>
 
-
     <!-- Classes Section -->
     <section class="classes py-5">
         <div class="container">
@@ -69,8 +67,7 @@
         </div>
     </section>
 
-
-    <!-- Links Section -->
+        <!-- Links Section -->
     <section class="links py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Ressources Utiles</h2>
@@ -145,11 +142,11 @@
                                                 <p><strong>Type de magie:</strong> ${row.type_magie || 'N/A'}</p>
                                                 <p><strong>Détails:</strong> ${row.details}</p>
                                                 <div>
-                                                    <p><strong>Attaque:</strong> ${createProgressBar(row.attaque)}</p>
-                                                    <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite)}</p>
-                                                    <p><strong>Support:</strong> ${createProgressBar(row.support)}</p>
-                                                    <p><strong>Utilitaire:</strong> ${createProgressBar(row.utilitaire)}</p>
-                                                    <p><strong>Difficulté:</strong> ${createProgressBar(row.difficulte)}</p>
+                                                    <p><strong>Attaque:</strong> ${createProgressBar(row.attaque, 'attaque')}</p>
+                                                    <p><strong>Survivabilité:</strong> ${createProgressBar(row.survivabilite, 'survivabilite')}</p>
+                                                    <p><strong>Support:</strong> ${createProgressBar(row.support, 'support')}</p>
+                                                    <p><strong>Utilitaire:</strong> ${createProgressBar(row.utilitaire, 'utilitaire')}</p>
+                                                    <p><strong>Difficulté:</strong> ${createProgressBar(row.difficulte, 'difficulte')}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,10 +159,18 @@
                 }
             });
 
-            function createProgressBar(value) {
+            function createProgressBar(value, type) {
+                const typeClass = {
+                    'attaque': 'progress-bar-attaque',
+                    'survivabilite': 'progress-bar-survivabilite',
+                    'support': 'progress-bar-support',
+                    'utilitaire': 'progress-bar-utilitaire',
+                    'difficulte': 'progress-bar-difficulte'
+                }[type];
+                
                 return `
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
+                        <div class="progress-bar ${typeClass}" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
                     </div>
                 `;
             }
