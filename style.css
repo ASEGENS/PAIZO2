@@ -30,31 +30,6 @@ body {
     color: #fff;
 }
 
-/* Ajout de styles pour éviter le chevauchement */
-.navbar-nav {
-    flex-direction: row; /* Assurez-vous que les éléments sont alignés en ligne */
-}
-
-.nav-item {
-    margin-left: 10px; /* Espacement entre les éléments de navigation */
-}
-
-/* Assurez-vous que le menu déroulant se comporte correctement */
-.dropdown-menu {
-    background-color: #333; /* Couleur de fond du menu déroulant */
-    color: #fff;
-}
-
-.dropdown-item {
-    color: #d4af37;
-}
-
-.dropdown-item:hover {
-    background-color: #555;
-    color: #fff;
-}
-
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -113,6 +88,8 @@ body {
 .about {
     background-color: #ece5b6;
     padding: 3rem 0;
+    margin: 0 auto; /* Centrer la section */
+    max-width: 1200px; /* Limiter la largeur pour éviter trop d'étroitesse */
 }
 
 .about h2 {
@@ -123,6 +100,7 @@ body {
 
 .about p {
     color: #666;
+    margin-bottom: 1rem;
 }
 
 /* Features Section */
@@ -130,6 +108,8 @@ body {
     background-color: #4b5320;
     color: #fff;
     padding: 3rem 0;
+    margin: 0 auto; /* Centrer la section */
+    max-width: 1200px; /* Limiter la largeur pour éviter trop d'étroitesse */
 }
 
 .features i {
@@ -150,11 +130,14 @@ body {
 .gallery {
     background-color: #ece5b6;
     padding: 3rem 0;
+    margin: 0 auto; /* Centrer la section */
+    max-width: 1200px; /* Limiter la largeur pour éviter trop d'étroitesse */
 }
 
 .gallery img {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem; /* Ajouter une marge en bas pour espacer les images */
 }
 
 .gallery img:hover {
@@ -229,4 +212,3 @@ body {
 .progress-bar-difficulte {
     background-color: #ffc107; /* Jaune pour difficulté */
 }
-
