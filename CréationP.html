@@ -18,16 +18,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Personnages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CréationP.html">Créer un Personnage</a></li>
+                            <li><a class="dropdown-item" href="personnages.html">Classes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGolarion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Golarion
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownGolarion">
+                            <li><a class="dropdown-item" href="golarion.html">Lore</a></li>
+                            <li><a class="dropdown-item" href="map.html">Carte</a></li>
+                            <li><a class="dropdown-item" href="factions.html">Factions</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Règles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="personnages.html">Personnages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="golarion.html">Golarion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
@@ -39,8 +52,12 @@
 
     <!-- Introduction Section -->
     <section class="intro py-5 text-center text-white" style="background: url('img/bg.png') no-repeat center center; background-size: cover; height: 30vh;">
-        
+        <div class="container">
+            <h1 class="display-4">Créer votre Personnage</h1>
+            <p class="lead">Commencez votre aventure en créant un héros unique.</p>
+        </div>
     </section>
+
 
     <!-- Presentation Section -->
     <section class="presentation py-5">
@@ -52,6 +69,7 @@
             <p>Maintenant il vous faudra choisir qui vous voulez incarner, car comme au théâtre vous allez jouer le rôle de votre personnage, interagir avec les autres joueurs comme si vous étiez ce personnage avec sa personnalité, son vécu, ses à prioris et devoir imaginer comment ce dernier va réagir dans les situations qui lui seront présentées.</p>
         </div>
     </section>
+
 
     <!-- Characteristics Section -->
     <section class="characteristics py-5 bg-light">
@@ -73,6 +91,7 @@
             </ul>
         </div>
     </section>
+
 
     <!-- Guide pour Choisir sa Classe -->
     <section class="guide py-5">

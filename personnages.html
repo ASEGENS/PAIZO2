@@ -18,16 +18,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Personnages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="CréationP.html">Créer un Personnage</a></li>
+                            <li><a class="dropdown-item" href="personnages.html">Classes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGolarion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Golarion
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownGolarion">
+                            <li><a class="dropdown-item" href="golarion.html">Lore</a></li>
+                            <li><a class="dropdown-item" href="map.html">Carte</a></li>
+                            <li><a class="dropdown-item" href="factions.html">Factions</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Règles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="personnages.html">Personnages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="golarion.html">Golarion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
@@ -45,6 +58,7 @@
         </div>
     </section>
 
+
     <!-- Classes Section -->
     <section class="classes py-5">
         <div class="container">
@@ -54,6 +68,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Links Section -->
     <section class="links py-5 bg-light">
@@ -90,7 +105,7 @@
                     const data = results.data;
                     const container = document.getElementById('classes-container');
                     const modalsContainer = document.getElementById('modals-container');
-
+    
                     data.forEach(function(row, index) {
                         const col = document.createElement('div');
                         col.className = 'col-md-4';
@@ -104,7 +119,7 @@
                             </div>
                         `;
                         container.appendChild(col);
-
+    
                         const modal = document.createElement('div');
                         modal.className = 'modal fade';
                         modal.id = `modal${index}`;
@@ -146,15 +161,19 @@
                     });
                 }
             });
-
+    
             function createProgressBar(value) {
                 return `
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</div>
-                    </div>
-                `;
-            }
-        });
-    </script>
+                        <div class="progress-bar" role="progressbar" style="width: ${value * 20}%;" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="5">${value}/5</
+                            ${value}/5</div>
+                </div>
+            `;
+        }
+    });
+</script>
+
+
+
 </body>
 </html>
