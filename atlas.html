@@ -111,10 +111,10 @@
             }
 
             // Load and populate sections
-            loadCSV('geographie.csv', data => populateAccordion(data, 'geographie'));
-            loadCSV('histoire.csv', data => populateAccordion(data, 'histoire'));
-            loadCSV('concept.csv', data => populateAccordion(data, 'concept'));
-            loadCSV('religion.csv', data => populateAccordion(data, 'religion'));
+            loadCSV('atlasGeographie.csv', data => populateAccordion(data, 'geographie'));
+            loadCSV('atlasHistoire.csv', data => populateAccordion(data, 'histoire'));
+            loadCSV('atlasConcept.csv', data => populateAccordion(data, 'concept'));
+            loadCSV('atlasReligion.csv', data => populateAccordion(data, 'religion'));
 
             // Function to load HTML from external files
             function loadHTML(elementId, url) {
