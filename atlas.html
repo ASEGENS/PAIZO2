@@ -42,7 +42,8 @@
                 'Histoire': 'atlasHistoire.csv',
                 'Géographie': 'atlasGeographie.csv',
                 'Concept': 'atlasConcepts.csv',
-                'Religion': 'atlasReligions.csv'
+                'Religion': 'atlasReligions.csv',
+                'Guilde': 'atlasGuildes.csv'
             };
 
             function parseCSV(file, callback) {
@@ -59,6 +60,8 @@
                 const subAccordion = document.createElement('div');
                 subAccordion.className = 'accordion';
                 subAccordion.id = `subAccordion${parentId}`;
+
+                data.sort((a, b) => (a.nom || a.title).localeCompare(b.nom || b.title));
 
                 data.forEach((row, index) => {
                     const isFirst = index === 0;
