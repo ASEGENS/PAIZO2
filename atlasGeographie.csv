@@ -1,4 +1,3 @@
-nom,img,description,politique,population,capital,monument,religion
-Taisinia,taisinia.jpg,Description de Taisinia,Politique de Taisinia,Population de Taisinia,Capitale de Taisinia,Monument de Taisinia,Religion de Taisinia
-Uriel,uriel.jpg,Description de Uriel,Politique de Uriel,Population de Uriel,Capitale de Uriel,Monument de Uriel,Religion de Uriel
-
+nom,image,description,Politique,Population,capital,monument,religion
+Pays1,image1.jpg,Description de Pays1,Politique de Pays1,Population de Pays1,Capitale de Pays1,Monument de Pays1,Religion de Pays1
+Pays2,image2.jpg,Description de Pays2,Politique de Pays2,Population de Pays2,Capitale de Pays2,Monument de Pays2,Religion de Pays2

@@ -1,4 +1,3 @@
-fait,date,lieu,description
-Fait 1,Date 1,Lieu 1,Description du fait 1
-Fait 2,Date 2,Lieu 2,Description du fait 2
-
+title,date,lieux,description
+Événement1,Date1,Lieu1,Description de l'événement 1
+Événement2,Date2,Lieu2,Description de l'événement 2
