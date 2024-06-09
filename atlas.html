@@ -39,11 +39,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Load and parse CSV files
             const csvFiles = {
-                'Histoire': 'atlasHistoire.csv',
-                'Géographie': 'atlasGeographie.csv',
                 'Concept': 'atlasConcepts.csv',
-                'Religion': 'atlasReligions.csv',
-                'Guilde': 'atlasGuildes.csv'
+                'Géographie': 'atlasGeographie.csv',
+                'Guilde': 'atlasGuildes.csv',
+                'Histoire': 'atlasHistoire.csv',
+                'Religion': 'atlasReligions.csv'
             };
 
             function parseCSV(file, callback) {
@@ -60,8 +60,6 @@
                 const subAccordion = document.createElement('div');
                 subAccordion.className = 'accordion';
                 subAccordion.id = `subAccordion${parentId}`;
-
-                data.sort((a, b) => (a.nom || a.title).localeCompare(b.nom || b.title));
 
                 data.forEach((row, index) => {
                     const isFirst = index === 0;
