@@ -37,96 +37,9 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Load and parse CSV files
-            const csvFiles = {
-                'Concept': 'atlasConcepts.csv',
-                'Géographie': 'atlasGeographie.csv',
-                'Guilde': 'atlasGuildes.csv',
-                'Histoire': 'atlasHistoire.csv',
-                'Religion': 'atlasReligions.csv'
-            };
-
-            function parseCSV(file, callback) {
-                Papa.parse(file, {
-                    download: true,
-                    header: true,
-                    complete: function(results) {
-                        callback(results.data);
-                    }
-                });
-            }
-
-            function createSubAccordion(data, parentId) {
-                const subAccordion = document.createElement('div');
-                subAccordion.className = 'accordion';
-                subAccordion.id = `subAccordion${parentId}`;
-
-                data.forEach((row, index) => {
-                    const isFirst = index === 0;
-                    const accordionItem = document.createElement('div');
-                    accordionItem.className = 'accordion-item';
-                    accordionItem.innerHTML = `
-                        <h2 class="accordion-header" id="subHeading${parentId}-${index}">
-                            <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse${parentId}-${index}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="subCollapse${parentId}-${index}">
-                                ${row.nom || row.title}
-                            </button>
-                        </h2>
-                        <div id="subCollapse${parentId}-${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="subHeading${parentId}-${index}" data-bs-parent="#subAccordion${parentId}">
-                            <div class="accordion-body">
-                                ${generateContent(row)}
-                            </div>
-                        </div>
-                    `;
-                    subAccordion.appendChild(accordionItem);
-                });
-
-                return subAccordion;
-            }
-
-            function generateContent(row) {
-                // Generate content based on the row data
-                let content = '';
-                for (const [key, value] of Object.entries(row)) {
-                    if (key !== 'nom' && key !== 'title' && key !== 'img') {
-                        content += `<p><strong>${key}:</strong> ${value}</p>`;
-                    }
-                }
-                if (row.img) {
-                    content += `<img src="img/${row.img}" alt="${row.nom || row.title}" class="img-fluid mb-3">`;
-                }
-                return content;
-            }
-
-            const mainAccordion = document.getElementById('mainAccordion');
-
-            for (const [section, file] of Object.entries(csvFiles)) {
-                parseCSV(file, function(data) {
-                    const isFirst = mainAccordion.children.length === 0;
-                    const accordionItem = document.createElement('div');
-                    accordionItem.className = 'accordion-item';
-                    const parentId = section.replace(/\s+/g, '');
-                    accordionItem.innerHTML = `
-                        <h2 class="accordion-header" id="heading${parentId}">
-                            <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${parentId}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="collapse${parentId}">
-                                ${section}
-                            </button>
-                        </h2>
-                        <div id="collapse${parentId}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${parentId}" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <!-- Sub accordion will be inserted here -->
-                            </div>
-                        </div>
-                    `;
-
-                    const subAccordion = createSubAccordion(data, parentId);
-                    accordionItem.querySelector('.accordion-body').appendChild(subAccordion);
-                    mainAccordion.appendChild(accordionItem);
-                });
-            }
-
             // Function to load HTML from external files
             function loadHTML(elementId, url) {
-                fetch(url)
+                return fetch(url)
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById(elementId).innerHTML = data;
@@ -134,10 +47,101 @@
             }
 
             // Load the navbar and footer
-            document.addEventListener('DOMContentLoaded', function() {
-                loadHTML('navbar-container', 'navbar.html');
-                loadHTML('footer-container', 'footer.html');
+            Promise.all([
+                loadHTML('navbar-container', 'navbar.html'),
+                loadHTML('footer-container', 'footer.html')
+            ]).then(() => {
+                initializeAccordion();
             });
+
+            function initializeAccordion() {
+                // Load and parse CSV files
+                const csvFiles = {
+                    'Concept': 'atlasConcepts.csv',
+                    'Géographie': 'atlasGeographie.csv',
+                    'Guilde': 'atlasGuildes.csv',
+                    'Histoire': 'atlasHistoire.csv',
+                    'Religion': 'atlasReligions.csv'
+                };
+
+                function parseCSV(file, callback) {
+                    Papa.parse(file, {
+                        download: true,
+                        header: true,
+                        complete: function(results) {
+                            callback(results.data);
+                        }
+                    });
+                }
+
+                function createSubAccordion(data, parentId) {
+                    const subAccordion = document.createElement('div');
+                    subAccordion.className = 'accordion';
+                    subAccordion.id = `subAccordion${parentId}`;
+
+                    data.forEach((row, index) => {
+                        const isFirst = index === 0;
+                        const accordionItem = document.createElement('div');
+                        accordionItem.className = 'accordion-item';
+                        accordionItem.innerHTML = `
+                            <h2 class="accordion-header" id="subHeading${parentId}-${index}">
+                                <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse${parentId}-${index}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="subCollapse${parentId}-${index}">
+                                    ${row.nom || row.title}
+                                </button>
+                            </h2>
+                            <div id="subCollapse${parentId}-${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="subHeading${parentId}-${index}" data-bs-parent="#subAccordion${parentId}">
+                                <div class="accordion-body">
+                                    ${generateContent(row)}
+                                </div>
+                            </div>
+                        `;
+                        subAccordion.appendChild(accordionItem);
+                    });
+
+                    return subAccordion;
+                }
+
+                function generateContent(row) {
+                    // Generate content based on the row data
+                    let content = '';
+                    for (const [key, value] of Object.entries(row)) {
+                        if (key !== 'nom' && key !== 'title' && key !== 'img') {
+                            content += `<p><strong>${key}:</strong> ${value}</p>`;
+                        }
+                    }
+                    if (row.img) {
+                        content += `<img src="img/${row.img}" alt="${row.nom || row.title}" class="img-fluid mb-3">`;
+                    }
+                    return content;
+                }
+
+                const mainAccordion = document.getElementById('mainAccordion');
+
+                for (const [section, file] of Object.entries(csvFiles)) {
+                    parseCSV(file, function(data) {
+                        const isFirst = mainAccordion.children.length === 0;
+                        const accordionItem = document.createElement('div');
+                        accordionItem.className = 'accordion-item';
+                        const parentId = section.replace(/\s+/g, '');
+                        accordionItem.innerHTML = `
+                            <h2 class="accordion-header" id="heading${parentId}">
+                                <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${parentId}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="collapse${parentId}">
+                                    ${section}
+                                </button>
+                            </h2>
+                            <div id="collapse${parentId}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${parentId}" data-bs-parent="#mainAccordion">
+                                <div class="accordion-body">
+                                    <!-- Sub accordion will be inserted here -->
+                                </div>
+                            </div>
+                        `;
+
+                        const subAccordion = createSubAccordion(data, parentId);
+                        accordionItem.querySelector('.accordion-body').appendChild(subAccordion);
+                        mainAccordion.appendChild(accordionItem);
+                    });
+                }
+            }
         });
     </script>
 </body>
