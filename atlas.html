@@ -20,7 +20,7 @@
     </section>
 
     <!-- Accordion Section -->
-    <section class="accordion-section py-5">
+    <section class="accordion-section py-5" id="accordion-section">
         <div class="container">
             <h2 class="text-center mb-4">Le Lore d'Atlas</h2>
             <div class="accordion" id="atlasAccordion">
@@ -44,6 +44,7 @@
                 complete: function(results) {
                     const data = results.data;
                     const accordion = document.getElementById('atlasAccordion');
+                    const accordionSection = document.getElementById('accordion-section');
                     data.forEach((row, index) => {
                         const isFirst = index === 0;
                         const accordionItem = document.createElement('div');
@@ -56,12 +57,23 @@
                             </h2>
                             <div id="collapse${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${index}" data-bs-parent="#atlasAccordion">
                                 <div class="accordion-body">
-                                    <img src="img/${row.img}" alt="${row.title}" class="img-fluid mb-3">
                                     ${row.content}
                                 </div>
                             </div>
                         `;
                         accordion.appendChild(accordionItem);
+
+                        // Add event listeners to change background image on show/hide
+                        const collapseElement = document.getElementById(`collapse${index}`);
+                        collapseElement.addEventListener('show.bs.collapse', function () {
+                            accordionSection.style.background = `url('img/${row.img}') no-repeat center center`;
+                            accordionSection.style.backgroundSize = 'cover';
+                        });
+                        collapseElement.addEventListener('hide.bs.collapse', function () {
+                            if (!accordion.querySelector('.accordion-collapse.show')) {
+                                accordionSection.style.background = '';
+                            }
+                        });
                     });
                 }
             });

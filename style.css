@@ -218,3 +218,9 @@ body {
 .progress-bar-difficulte {
     background-color: #ffc107; /* Jaune pour difficulté */
 }
+
+/* Section Accordion */
+.accordion-section {
+    background-color: #fff; /* Fond blanc par défaut */
+    transition: background 0.5s ease; /* Transition douce pour le changement de fond */
+}
