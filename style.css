@@ -29,6 +29,12 @@ body {
 .navbar-dark .navbar-brand:hover {
     color: #fff;
 }
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
 
 /* Hero Section */
 .hero {
