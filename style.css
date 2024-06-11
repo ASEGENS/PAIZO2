@@ -216,10 +216,11 @@ body {
 .progress-bar-difficulte {
     background-color: #ffc107; /* Jaune pour difficulté */
 }
+
 /* Accordion Styles */
 .accordion-button {
-    background-color: #4b5320; /* Couleur de fond personnalisée */
-    color: #fff; /* Couleur du texte */
+    background-color: #355e3b; /* Couleur de fond assortie au thème */
+    color: #d4af37; /* Couleur du texte assortie */
     border: none; /* Supprimer la bordure par défaut */
     border-radius: 5px; /* Ajouter un rayon aux coins */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transition douce */
@@ -227,7 +228,8 @@ body {
 
 .accordion-button:hover,
 .accordion-button:not(.collapsed) {
-    background-color: #355e3b; /* Couleur de fond au survol et lorsqu'il est ouvert */
+    background-color: #4b5320; /* Couleur de fond au survol et lorsqu'il est ouvert */
+    color: #fff; /* Couleur du texte lorsqu'il est ouvert */
     transform: scale(1.02); /* Légère augmentation de la taille */
 }
 
@@ -236,7 +238,7 @@ body {
 }
 
 .accordion-body {
-    background-color: #f8f5f2; /* Couleur de fond pour le corps */
+    background-color: #ece5b6; /* Couleur de fond assortie au thème */
     border: 1px solid #ddd; /* Bordure légère */
     border-radius: 5px; /* Rayon aux coins */
     padding: 20px; /* Espacement interne */
@@ -250,4 +252,5 @@ body {
 .accordion-header {
     margin-bottom: 5px; /* Espacement sous le header */
 }
+
 
