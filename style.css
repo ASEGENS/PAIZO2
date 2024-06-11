@@ -204,25 +204,50 @@ body {
 .progress-bar-attaque {
     background-color: #dc3545; /* Rouge pour attaque */
 }
-
 .progress-bar-survivabilite {
     background-color: #007bff; /* Bleu pour survivabilité */
 }
-
 .progress-bar-support {
     background-color: #28a745; /* Vert pour support */
 }
-
 .progress-bar-utilitaire {
     background-color: #e83e8c; /* Rose pour utilitaire */
 }
-
 .progress-bar-difficulte {
     background-color: #ffc107; /* Jaune pour difficulté */
 }
-
-/* Section Accordion */
-.accordion-section {
-    background-color: #fff; /* Fond blanc par défaut */
-    transition: background 0.5s ease; /* Transition douce pour le changement de fond */
+/* Accordion Styles */
+.accordion-button {
+    background-color: #4b5320; /* Couleur de fond personnalisée */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure par défaut */
+    border-radius: 5px; /* Ajouter un rayon aux coins */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition douce */
 }
+
+.accordion-button:hover,
+.accordion-button:not(.collapsed) {
+    background-color: #355e3b; /* Couleur de fond au survol et lorsqu'il est ouvert */
+    transform: scale(1.02); /* Légère augmentation de la taille */
+}
+
+.accordion-button:focus {
+    box-shadow: none; /* Supprimer l'effet de focus par défaut */
+}
+
+.accordion-body {
+    background-color: #f8f5f2; /* Couleur de fond pour le corps */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 5px; /* Rayon aux coins */
+    padding: 20px; /* Espacement interne */
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+.accordion-item {
+    margin-bottom: 15px; /* Espacement entre les items */
+}
+
+.accordion-header {
+    margin-bottom: 5px; /* Espacement sous le header */
+}
+
