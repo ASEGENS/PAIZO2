@@ -1,4 +1,45 @@
-nom,description,stat_preferree,traits,details,image
-Humain,Les humains sont polyvalents et adaptables.,Polyvalence,Vitesse,Adaptable,humain.jpg
-Elfe,Les elfes sont gracieux et agiles.,Dextérité,Vision nocturne,Magie innée,elfe.jpg
-Nain,Les nains sont robustes et résistants.,Constitution,Résistance,Endurance,nain.jpg
+nom,livre,rarete,description,taille,vie,stat,vitesse,langues,special,image
+Dwarf,PC1,commun,Les nains sont robustes et résistants.,Moyenne,10,+ Constitution / + Sagesse / + Choix / - Charisme,20,Commun et Nain + Int,Vision nocturne et dagues de clan,dwarf.jpg
+Elf,PC1,commun,Les elfes sont gracieux et agiles.,Moyenne,6,+ Dextérité / + Intelligence / + Choix / - Constitution,30,Commun et Elf + Int,Vision par faible luminosité,elfe.jpg
+Gnome,PC1,commun,Les gnomes sont curieux et magiques.,Petite,8,+ Constitution / + Charisme / + Choix / - Force,25,Commun et Gnome + Int,Vision par faible luminosité,gnome.jpg
+Goblin,PC1,commun,Les gobelins sont vifs et espiègles.,Petite,6,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Goblin + Int,Vision nocturne,goblin.jpg
+Halfling,PC1,commun,Les halflings sont chanceux et agiles.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Halfling + Int,Yeux perçants,halfling.jpg
+Human,PC1,commun,Les humains sont polyvalents et adaptables.,Moyenne,8,+ Choix / + Choix,25,Commun + 1 + Int,,human.jpg
+Leshy,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,leshy.jpg
+Orc,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,orc.jpg
+
+Athamaru,PC2,peu commun,Les athamarus sont des êtres célestes.,Moyenne,8,+ Force / + Sagesse / + Choix / -Intelligence,20 (nage 25),Commun et Celestial + Int,Vision nocturne,athamaru.jpg
+Azarketi,PC2,peu commun,Les azarketis sont des créatures aquatiques.,Moyenne,8,+ Constitution / + Charisme / + Choix / - Sagesse,25,Commun et Aquan + Int,Respiration aquatique,azarketi.jpg
+Catfolk,PC2,peu commun,Les catfolks sont agiles et furtifs.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Catfolk + Int,Vision nocturne,catfolk.jpg
+Centaur,PC2,peu commun,Les centaures sont puissants et rapides.,Grande,8,+ Force / + Sagesse / + Choix / - Charisme,30,Commun et Sylvan + Int,Course rapide,centaur.jpg
+Fetchling,PC2,peu commun,Les fetchlings sont des créatures de l'ombre.,Moyenne,6,+ Dextérité / + Choix,25,Commun et Shadowtongue + Int,Vision nocturne,fetchling.jpg
+Gnoll,PC2,peu commun,Les gnolls sont féroces et robustes.,Moyenne,8,+ Force / + Intelligence / + Choix / - Sagesse,25,Commun et Gnoll + Int,Vision nocturne,gnoll.jpg
+Grippli,LO: TME,peu commun,Les gripplis sont agiles et sautillants.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Grippli + Int,Saut amélioré,grippli.jpg
+Hobgoblin,PC2,peu commun,Les hobgobelins sont disciplinés et robustes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Goblin + Int,Vision nocturne,hobgoblin.jpg
+Kitsune,PC2,peu commun,Les kitsunes sont rusés et magiques.,Moyenne,6,+ Dextérité / + Charisme / - Force,30,Commun et Sylvan + Int,Transformation en renard,kitsune.jpg
+Kobold,PC2,peu commun,Les kobolds sont agiles et ingénieux.,Petite,6,+ Dextérité / + Intelligence / - Constitution,25,Commun et Draconic + Int,Vision nocturne,kobold.jpg
+Lizardfolk,PC2,peu commun,Les lizardfolks sont robustes et adaptables.,Moyenne,8,+ Constitution / + Sagesse / - Intelligence,25,Commun et Draconic + Int,Nage rapide,lizardfolk.jpg
+Merfolk,PC2,peu commun,Les merfolks sont des créatures aquatiques gracieuses.,Moyenne,8,+ Charisme / + Constitution / - Choix,25,Commun et Aquan + Int,Respiration aquatique,merfolk.jpg
+Minotaur,PC2,peu commun,Les minotaures sont puissants et imposants.,Grande,10,+ Force / + Constitution / - Intelligence,35,Commun et Sylvan + Int,Charge puissante,minotaur.jpg
+Nagaji,PC2,peu commun,Les nagajis sont des êtres serpentins sages.,Moyenne,8,+ Constitution / + Sagesse / - Choix,25,Commun et Draconic + Int,Morsure empoisonnée,nagaji.jpg
+Ratfolk,PC2,peu commun,Les ratfolks sont vifs et ingénieux.,Petite,6,+ Dextérité / + Intelligence / - Charisme,25,Commun et Ratfolk + Int,Vision nocturne,ratfolk.jpg
+Tengu,PC2,peu commun,Les tengus sont des créatures agiles et volantes.,Moyenne,6,+ Dextérité / + Intelligence / - Constitution,30,Commun et Tengu + Int,Vol,tengu.jpg
+Vanara,PC2,peu commun,Les vanaras sont agiles et sages.,Moyenne,8,+ Dextérité / + Sagesse / - Charisme,25,Commun et Vanara + Int,Queue préhensile,vanara.jpg
+
+Anadi,PC3,rare,Les anadis sont des créatures arachnéennes sages.,Moyenne,6,+ Dextérité / + Sagesse / - Choix,30,Commun et Sylvan + Int,Transformation en araignée,anadi.jpg
+Android,PC3,rare,Les androids sont des êtres artificiels logiques.,Moyenne,6,+ Dextérité / + Intelligence / - Charisme,30,Commun et Android + Int,Immunité aux maladies,android.jpg
+Automaton,PC3,rare,Les automatons sont des constructions robustes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Automaton + Int,Corps métallique,automaton.jpg
+Awakened Animal,PC3,rare,Les animaux éveillés sont des créatures intelligentes.,Variable,8,+ à deux caractéristiques différentes,Variable,Commun et Sylvan + Int,Capacités animales,awakened_animal.jpg
+Conrasu,PC3,rare,Les conrasus sont des êtres naturels robustes.,Moyenne,8,+ Constitution / + Sagesse / - Choix,25,Commun et Sylvan + Int,Coquille vivante,conrasu.jpg
+Fleshwarp,PC3,rare,Les fleshwarps sont des créatures mutées résistantes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Undercommon + Int,Mutation adaptative,fleshwarp.jpg
+Ghoran,PC3,rare,Les ghorans sont des créatures végétales sages.,Moyenne,6,+ Sagesse / + Constitution / - Choix,30,Commun et Sylvan + Int,Photosynthèse,ghoran.jpg
+Goloma,PC3,rare,Les golomas sont des créatures robustes et mystiques.,Moyenne,8,+ Constitution / + Sagesse / - Choix,25,Commun et Sylvan + Int,Vision multiple,goloma.jpg
+Kashrishi,PC3,rare,Les kashrishis sont des êtres mystiques robustes.,Moyenne,8,+ Constitution / + Charisme / - Intelligence,25,Commun et Sylvan + Int,Corne mystique,kashrishi.jpg
+Poppet,PC3,rare,Les poppets sont des petites constructions intelligentes.,Petite,6,+ Dextérité / + Intelligence / - Constitution,25,Commun et Sylvan + Int,Corps de poupée,poppet.jpg
+Shisk,PC3,rare,Les shisks sont des créatures sages et agiles.,Moyenne,6,+ Dextérité / + Sagesse / - Constitution,30,Commun et Sylvan + Int,Vision nocturne,shisk.jpg
+Shoony,PC3,rare,Les shoonys sont des créatures robustes et sociales.,Petite,8,+ Constitution / + Charisme / - Choix,25,Commun et Sylvan + Int,Yeux perçants,shoony.jpg
+Skeleton,PC3,rare,Les squelettes sont des créatures mort-vivantes résistantes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Necril + Int,Immunité aux poisons,skeleton.jpg
+Sprite,PC3,rare,Les sprites sont des petites créatures magiques.,Petite,6,+ Dextérité / + Charisme / - Constitution,25,Commun et Sylvan + Int,Ailes de fée,sprite.jpg
+Strix,PC3,rare,Les strix sont des créatures ailées robustes.,Moyenne,8,+ Force / + Constitution / - Charisme,25,Commun et Strix + Int,Vol,strix.jpg
+Surki,PC3,rare,Les surkis sont des créatures mystiques et agiles.,Moyenne,6,+ Dextérité / + Charisme / - Constitution,30,Commun et Sylvan + Int,Transformation mystique,surki.jpg
+Vishkanya,PC3,rare,Les vishkanyas sont des créatures exotiques et toxiques.,Moyenne,8,+ Dextérité / + Charisme / - Choix,25,Commun et Vishkanya + Int,Peau toxique,vishkanya.jpg
