@@ -15,16 +15,16 @@ Centaur,HotW,peu commun,Les centaures sont puissants et rapides.,Grande,8,+ Forc
 Fetchling,LO: AG,peu commun,Les fetchlings sont des créatures de l'ombre.,Moyenne,6,+ Dextérité / + Choix,25,Commun et Shadowtongue + Int,Vision nocturne,fetchling.jpg
 Gnoll,LO: TME,peu commun,Les gnolls sont féroces et robustes.,Moyenne,8,+ Force / + Intelligence / + Choix / - Sagesse,25,Commun et Gnoll + Int,Vision nocturne,gnoll.jpg
 Grippli,LO: TME,peu commun,Les gripplis sont agiles et sautillants.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Grippli + Int,Saut amélioré,grippli.jpg
-Hobgoblin,LO: CG,peu commun,Les hobgobelins sont disciplinés et robustes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Goblin + Int,Vision nocturne,hobgoblin.jpg
-Kitsune,LO: AG,peu commun,Les kitsunes sont rusés et magiques.,Moyenne,6,+ Dextérité / + Charisme / - Force,30,Commun et Sylvan + Int,Transformation en renard,kitsune.jpg
-Kobold,APG,peu commun,Les kobolds sont agiles et ingénieux.,Petite,6,+ Dextérité / + Intelligence / - Constitution,25,Commun et Draconic + Int,Vision nocturne,kobold.jpg
-Lizardfolk,LO: CG,peu commun,Les lizardfolks sont robustes et adaptables.,Moyenne,8,+ Constitution / + Sagesse / - Intelligence,25,Commun et Draconic + Int,Nage rapide,lizardfolk.jpg
-Merfolk,HotW,peu commun,Les merfolks sont des créatures aquatiques gracieuses.,Moyenne,8,+ Charisme / + Constitution / - Choix,25,Commun et Aquan + Int,Respiration aquatique,merfolk.jpg
-Minotaur,HotW,peu commun,Les minotaures sont puissants et imposants.,Grande,10,+ Force / + Constitution / - Intelligence,35,Commun et Sylvan + Int,Charge puissante,minotaur.jpg
-Nagaji,LO: IL,peu commun,Les nagajis sont des êtres serpentins sages.,Moyenne,8,+ Constitution / + Sagesse / - Choix,25,Commun et Draconic + Int,Morsure empoisonnée,nagaji.jpg
-Ratfolk,APG,peu commun,Les ratfolks sont vifs et ingénieux.,Petite,6,+ Dextérité / + Intelligence / - Charisme,25,Commun et Ratfolk + Int,Vision nocturne,ratfolk.jpg
-Tengu,APG,peu commun,Les tengus sont des créatures agiles et volantes.,Moyenne,6,+ Dextérité / + Intelligence / - Constitution,30,Commun et Tengu + Int,Vol,tengu.jpg
-Vanara,LO: IL,peu commun,Les vanaras sont agiles et sages.,Moyenne,8,+ Dextérité / + Sagesse / - Charisme,25,Commun et Vanara + Int,Queue préhensile,vanara.jpg
+Hobgoblin,LO: CG,peu commun,Les hobgobelins sont disciplinés et robustes.,Moyenne,8,+ Constitution / + Intelligence / + Choix / - Sagesse,25,Commun et Goblin + Int,Vision nocturne,hobgoblin.jpg
+Kitsune,LO: AG,peu commun,Les kitsunes sont rusés et magiques.,Moyenne,6,+ Charisme / + Choix,30,Commun et Sylvan + Int,Transformation en renard,kitsune.jpg
+Kobold,APG,peu commun,Les kobolds sont agiles et ingénieux.,Petite,6,+ Dextérité / + Charisme / + Choix / - Constitution,25,Commun et Draconic + Int,Vision nocturne,kobold.jpg
+Lizardfolk,LO: CG,peu commun,Les lizardfolks sont robustes et adaptables.,Moyenne,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Draconic + Int,Nage rapide,lizardfolk.jpg
+Merfolk,HotW,peu commun,Les merfolks sont des créatures aquatiques gracieuses.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Constitution,25,Commun et Aquan + Int,Respiration aquatique,merfolk.jpg
+Minotaur,HotW,peu commun,Les minotaures sont puissants et imposants.,Grande,10,+ Force / + Constitution / + Choix / - Charisme,35,Commun et Sylvan + Int,Charge puissante,minotaur.jpg
+Nagaji,LO: IL,peu commun,Les nagajis sont des êtres serpentins sages.,Moyenne,8,+ Force / + Choix,25,Commun et Draconic + Int,Morsure empoisonnée,nagaji.jpg
+Ratfolk,APG,peu commun,Les ratfolks sont vifs et ingénieux.,Petite,6,+ Dextérité / + Intelligence / + Choix / - Force,25,Commun et Ratfolk + Int,Vision nocturne,ratfolk.jpg
+Tengu,APG,peu commun,Les tengus sont des créatures agiles et volantes.,Moyenne,6,+ Dextérité / + Choix,30,Commun et Tengu + Int,Vol,tengu.jpg
+Vanara,LO: IL,peu commun,Les vanaras sont agiles et sages.,Moyenne,8,+ Dextérité / + Choix,25,Commun et Vanara + Int,Queue préhensile,vanara.jpg
 
 Anadi,PC3,rare,Les anadis sont des créatures arachnéennes sages.,Moyenne,6,+ Dextérité / + Sagesse / - Choix,30,Commun et Sylvan + Int,Transformation en araignée,anadi.jpg
 Android,PC3,rare,Les androids sont des êtres artificiels logiques.,Moyenne,6,+ Dextérité / + Intelligence / - Charisme,30,Commun et Android + Int,Immunité aux maladies,android.jpg
