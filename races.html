@@ -53,6 +53,11 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
+
+            loadHTML('navbar-container', 'navbar.html');
+            loadHTML('footer-container', 'footer.html');
+
             Papa.parse('races.csv', {
                 download: true,
                 header: true,
@@ -113,22 +118,19 @@
                     });
                 }
             });
-
-            // Function to load HTML from external files
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    });
-            }
-
-            // Load the navbar and footer
-            document.addEventListener('DOMContentLoaded', function() {
-                loadHTML('navbar-container', 'navbar.html');
-                loadHTML('footer-container', 'footer.html');
-            });
         });
+
+        function loadHTML(elementId, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                    console.log(`Loaded content into #${elementId}`);
+                })
+                .catch(error => {
+                    console.error('Error loading HTML:', error);
+                });
+        }
     </script>
 </body>
 </html>
