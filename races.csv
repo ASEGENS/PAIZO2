@@ -1,18 +1,18 @@
 nom,livre,rarete,description,taille,vie,stat,vitesse,langues,special,image
-Dwarf,PC1,commun,Les nains sont robustes et résistants.,Moyenne,10,+ Constitution / + Sagesse / + Choix / - Charisme,20,Commun et Nain + Int,Vision nocturne et dagues de clan,dwarf.jpg
-Elf,PC1,commun,Les elfes sont gracieux et agiles.,Moyenne,6,+ Dextérité / + Intelligence / + Choix / - Constitution,30,Commun et Elf + Int,Vision par faible luminosité,elfe.jpg
+Nain,PC1,commun,Les nains sont robustes et résistants.,Moyenne,10,+ Constitution / + Sagesse / + Choix / - Charisme,20,Commun et Nain + Int,Vision nocturne et dagues de clan,dwarf.jpg
+Elfe,PC1,commun,Les elfes sont gracieux et agiles.,Moyenne,6,+ Dextérité / + Intelligence / + Choix / - Constitution,30,Commun et Elf + Int,Vision par faible luminosité,elfe.jpg
 Gnome,PC1,commun,Les gnomes sont curieux et magiques.,Petite,8,+ Constitution / + Charisme / + Choix / - Force,25,Commun et Gnome + Int,Vision par faible luminosité,gnome.jpg
 Goblin,PC1,commun,Les gobelins sont vifs et espiègles.,Petite,6,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Goblin + Int,Vision nocturne,goblin.jpg
-Halfling,PC1,commun,Les halflings sont chanceux et agiles.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Halfling + Int,Yeux perçants,halfling.jpg
-Human,PC1,commun,Les humains sont polyvalents et adaptables.,Moyenne,8,+ Choix / + Choix,25,Commun + 1 + Int,,human.jpg
-Leshy,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,leshy.jpg
-Orc,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,orc.jpg
+Halfelin,PC1,commun,Les halflings sont chanceux et agiles.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Halfling + Int,Yeux perçants,halfling.jpg
+Humain,PC1,commun,Les humains sont polyvalents et adaptables.,Moyenne,8,+ Choix / + Choix,25,Commun + 1 + Int,,human.jpg
+Leshie ,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,leshy.jpg
+Orque,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,orc.jpg
 
 Athamaru,HotW,peu commun,Les athamarus sont des êtres célestes.,Moyenne,8,+ Force / + Sagesse / + Choix / -Intelligence,20 (nage 25),Commun et Celestial + Int,Vision nocturne,athamaru.jpg
 Azarketi,LO: A - CoLO,peu commun,Les azarketis sont des créatures aquatiques.,Moyenne,8,+ Constitution / + Charisme / + Choix / - Sagesse,25,Commun et Aquan + Int,Respiration aquatique,azarketi.jpg
-Catfolk,APG,peu commun,Les catfolks sont agiles et furtifs.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Catfolk + Int,Vision nocturne,catfolk.jpg
-Centaur,HotW,peu commun,Les centaures sont puissants et rapides.,Grande,8,+ Force / + Sagesse / + Choix / - Charisme,30,Commun et Sylvan + Int,Course rapide,centaur.jpg
-Fetchling,LO: AG,peu commun,Les fetchlings sont des créatures de l'ombre.,Moyenne,6,+ Dextérité / + Choix,25,Commun et Shadowtongue + Int,Vision nocturne,fetchling.jpg
+Hommes-chats,APG,peu commun,Les catfolks sont agiles et furtifs.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Catfolk + Int,Vision nocturne,catfolk.jpg
+Centaure,HotW,peu commun,Les centaures sont puissants et rapides.,Grande,8,+ Force / + Sagesse / + Choix / - Charisme,30,Commun et Sylvan + Int,Course rapide,centaur.jpg
+Fetchelin,LO: AG,peu commun,Les fetchlings sont des créatures de l'ombre.,Moyenne,6,+ Dextérité / + Choix,25,Commun et Shadowtongue + Int,Vision nocturne,fetchling.jpg
 Gnoll,LO: TME,peu commun,Les gnolls sont féroces et robustes.,Moyenne,8,+ Force / + Intelligence / + Choix / - Sagesse,25,Commun et Gnoll + Int,Vision nocturne,gnoll.jpg
 Grippli,LO: TME,peu commun,Les gripplis sont agiles et sautillants.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Grippli + Int,Saut amélioré,grippli.jpg
 Hobgoblin,LO: CG,peu commun,Les hobgobelins sont disciplinés et robustes.,Moyenne,8,+ Constitution / + Intelligence / + Choix / - Sagesse,25,Commun et Goblin + Int,Vision nocturne,hobgoblin.jpg
