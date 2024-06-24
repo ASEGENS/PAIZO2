@@ -7,7 +7,6 @@ Halfelin,PC1,commun,Les halflings sont chanceux et agiles.,Petite,6,+ Dextérit�
 Humain,PC1,commun,Les humains sont polyvalents et adaptables.,Moyenne,8,+ Choix / + Choix,25,Commun + 1 + Int,,Humain.webp
 Leshie ,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,Leshie.webp
 Orque,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,Orque.webp
-
 Athamaru,HotW,peu commun,Les athamarus sont des êtres célestes.,Moyenne,8,+ Force / + Sagesse / + Choix / -Intelligence,20 (nage 25),Commun et Celestial + Int,Vision nocturne,Athamaru.webp
 Azarketi,LO: A - CoLO,peu commun,Les azarketis sont des créatures aquatiques.,Moyenne,8,+ Constitution / + Charisme / + Choix / - Sagesse,25,Commun et Aquan + Int,Respiration aquatique,Azarketi.webp
 Hommes-chats,APG,peu commun,Les catfolks sont agiles et furtifs.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Catfolk + Int,Vision nocturne,Chat.webp
@@ -25,7 +24,6 @@ Nagaji,LO: IL,peu commun,Les nagajis sont des êtres serpentins sages.,Moyenne,8
 Hommes-rats,APG,peu commun,Les ratfolks sont vifs et ingénieux.,Petite,6,+ Dextérité / + Intelligence / + Choix / - Force,25,Commun et Ratfolk + Int,Vision nocturne,Rat.webp
 Tengu,APG,peu commun,Les tengus sont des créatures agiles et volantes.,Moyenne,6,+ Dextérité / + Choix,30,Commun et Tengu + Int,Vol,Tengu.webp
 Vanara,LO: IL,peu commun,Les vanaras sont agiles et sages.,Moyenne,8,+ Dextérité / + Choix,25,Commun et Vanara + Int,Queue préhensile,Vanara.webp
-
 Anadi,PC3,rare,Les anadis sont des créatures arachnéennes sages.,Moyenne,6,+ Dextérité / + Sagesse / - Choix,30,Commun et Sylvan + Int,Transformation en araignée,Anadi.webp
 Android,PC3,rare,Les androids sont des êtres artificiels logiques.,Moyenne,6,+ Dextérité / + Intelligence / - Charisme,30,Commun et Android + Int,Immunité aux maladies,Android.webp
 Automate,PC3,rare,Les automatons sont des constructions robustes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Automaton + Int,Corps métallique,Automate.webp
