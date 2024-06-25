@@ -5,8 +5,8 @@ Gnome,PC1,commun,Les gnomes sont curieux et magiques.,Petite,8,+ Constitution / 
 Goblin,PC1,commun,Les gobelins sont vifs et espiègles.,Petite,6,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Goblin + Int,Vision nocturne,Goblin.webp
 Halfelin,PC1,commun,Les halflings sont chanceux et agiles.,Petite,6,+ Dextérité / + Sagesse / + Choix / - Force,25,Commun et Halfelin + Int,Yeux perçants,Halfelin.webp
 Humain,PC1,commun,Les humains sont polyvalents et adaptables.,Moyenne,8,+ Choix / + Choix,25,Commun + 1 + Int,,Humain.webp
-Leshie ,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,Leshie.webp
-Orque,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,Orque.webp
+Léchi ,PC1,commun,Les leshies sont des esprits de la nature incarnés.,Petite,8,+ Constitution / + Sagesse / + Choix / - Intelligence,25,Commun et Sylvan + Int,Vision par faible luminosité et Alimentation des plantes,Léchi.webp
+Orc,PC1,commun,Les orcs sont forts et robustes.,Moyenne,10,+ Choix / + Choix,25,Commun et Orc + Int,Vision nocturne,Orc.webp
 Athamaru,HotW,peu commun,Les athamarus sont des êtres célestes.,Moyenne,8,+ Force / + Sagesse / + Choix / -Intelligence,20 (nage 25),Commun et Celestial + Int,Vision nocturne,Athamaru.webp
 Azarketi,LO: A - CoLO,peu commun,Les azarketis sont des créatures aquatiques.,Moyenne,8,+ Constitution / + Charisme / + Choix / - Sagesse,25,Commun et Aquan + Int,Respiration aquatique,Azarketi.webp
 Hommes-chats,APG,peu commun,Les catfolks sont agiles et furtifs.,Moyenne,8,+ Dextérité / + Charisme / + Choix / - Sagesse,25,Commun et Catfolk + Int,Vision nocturne,Chat.webp
@@ -37,7 +37,7 @@ Poupée,PC3,rare,Les poppets sont des petites constructions intelligentes.,Petit
 Shisk,PC3,rare,Les shisks sont des créatures sages et agiles.,Moyenne,6,+ Dextérité / + Sagesse / - Constitution,30,Commun et Sylvan + Int,Vision nocturne,Shisk.webp
 Shoony,PC3,rare,Les shoonys sont des créatures robustes et sociales.,Petite,8,+ Constitution / + Charisme / - Choix,25,Commun et Sylvan + Int,Yeux perçants,Shoony.webp
 Squelette,PC3,rare,Les squelettes sont des créatures mort-vivantes résistantes.,Moyenne,8,+ Constitution / + Intelligence / - Charisme,25,Commun et Necril + Int,Immunité aux poisons,Squelette.webp
-Lutin,PC3,rare,Les sprites sont des petites créatures magiques.,Petite,6,+ Dextérité / + Charisme / - Constitution,25,Commun et Sylvan + Int,Ailes de fée,Lutin.webp
+Sprite,PC3,rare,Les sprites sont des petites créatures magiques.,Petite,6,+ Dextérité / + Charisme / - Constitution,25,Commun et Sylvan + Int,Ailes de fée,Sprite.webp
 Strix,PC3,rare,Les strix sont des créatures ailées robustes.,Moyenne,8,+ Force / + Constitution / - Charisme,25,Commun et Strix + Int,Vol,Strix.webp
 Surki,PC3,rare,Les surkis sont des créatures mystiques et agiles.,Moyenne,6,+ Dextérité / + Charisme / - Constitution,30,Commun et Sylvan + Int,Transformation mystique,Surki.webp
 Vishkanya,PC3,rare,Les vishkanyas sont des créatures exotiques et toxiques.,Moyenne,8,+ Dextérité / + Charisme / - Choix,25,Commun et Vishkanya + Int,Peau toxique,Vishkanya.webp
