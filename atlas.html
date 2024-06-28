@@ -107,13 +107,26 @@
                     let content = '';
                     for (const [key, value] of Object.entries(row)) {
                         if (key !== 'nom' && key !== 'title' && key !== 'img') {
-                            content += `<p><strong>${key}:</strong> ${value}</p>`;
+                            if (isValidURL(value)) {
+                                content += `<p><strong>${key}:</strong> <a href="${value}" target="_blank">${value}</a></p>`;
+                            } else {
+                                content += `<p><strong>${key}:</strong> ${value}</p>`;
+                            }
                         }
                     }
                     if (row.img) {
                         content += `<img src="img/${row.img}" alt="${row.nom || row.title}" class="img-fluid mb-3">`;
                     }
                     return content;
+                }
+
+                function isValidURL(string) {
+                    try {
+                        new URL(string);
+                        return true;
+                    } catch (_) {
+                        return false;
+                    }
                 }
 
                 const mainAccordion = document.getElementById('mainAccordion');
