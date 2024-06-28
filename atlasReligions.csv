@@ -1,3 +1,46 @@
-nom,dieu,description
-Religion1,Dieu1,Description de Religion1
-Religion2,Dieu2,Description de Religion2
+nom,dieu,description, link
+Dieux majeurs, Abadar, dieu de la civilisation, https://www.pathfinder-fr.org/Wiki/Golarion.Abadar.ashx
+Dieux majeurs,Asmodéus, dieu-diable des contrats, https://www.pathfinder-fr.org/Wiki/Golarion.Asmod%c3%a9us.ashx
+Dieux majeurs,Calistria, déesse-elfe aux trois visages, https://www.pathfinder-fr.org/Wiki/Golarion.Calistria.ashx
+Dieux majeurs,Cayden Cailéan, dieu des aventuriers, https://www.pathfinder-fr.org/Wiki/Golarion.Cayden%20Cail%c3%a9an.ashx
+Dieux majeurs,Desna, déesse des étoiles, https://www.pathfinder-fr.org/Wiki/Golarion.Desna.ashx
+Dieux majeurs,Érastil, dieu de la famille, https://www.pathfinder-fr.org/Wiki/Golarion.%c3%89rastil.ashx
+Dieux majeurs,Gorum, dieu de la guerre, https://www.pathfinder-fr.org/Wiki/Golarion.Gorum.ashx
+Dieux majeurs,Gozreh, dieu de la nature, https://www.pathfinder-fr.org/Wiki/Golarion.Gozreh.ashx
+Dieux majeurs,Iomédae, déesse de la bravoure, https://www.pathfinder-fr.org/Wiki/Golarion.Iom%c3%a9dae.ashx
+Dieux majeurs,Irori, dieu du savoir, https://www.pathfinder-fr.org/Wiki/Golarion.Irori.ashx
+Dieux majeurs,Lamashtu, déesse de la folie, https://www.pathfinder-fr.org/Wiki/Golarion.Lamashtu.ashx
+Dieux majeurs,Néthys, dieu de la magie, https://www.pathfinder-fr.org/Wiki/Golarion.N%c3%a9thys.ashx
+Dieux majeurs,Norgorber, dieu du meurtre, https://www.pathfinder-fr.org/Wiki/Golarion.Norgorber.ashx
+Dieux majeurs,Pharasma, déesse qui juge les défunts, https://www.pathfinder-fr.org/Wiki/Golarion.Pharasma.ashx
+Dieux majeurs,Rovagug, dieu de la destruction, https://www.pathfinder-fr.org/Wiki/Golarion.Rovagug.ashx
+Dieux majeurs,Sarenrae, déesse-ange du soleil, https://www.pathfinder-fr.org/Wiki/Golarion.Sarenrae.ashx
+Dieux majeurs,Shélyn, déesse de la beauté, https://www.pathfinder-fr.org/Wiki/Golarion.Sh%c3%a9lyn.ashx
+Dieux majeurs,Torag, dieu-nain des artisans, https://www.pathfinder-fr.org/Wiki/Golarion.Torag.ashx
+Dieux majeurs,Urgathoa, déesse-liche des maladies, https://www.pathfinder-fr.org/Wiki/Golarion.Urgathoa.ashx
+Dieux majeurs,Zon-Kuthon, dieu des ténèbres, https://www.pathfinder-fr.org/Wiki/Golarion.Zon-Kuthon.ashx
+Autres dieux, Achaékek, l'Assassin Divin, https://www.pathfinder-fr.org/Wiki/Golarion.Acha%c3%a9kek.ashx
+Autres dieux, Apsu, le Dragon Créateur, https://www.pathfinder-fr.org/Wiki/Golarion.Apsu.ashx
+Autres dieux, Aroden, le Dernier des Azlants, https://www.pathfinder-fr.org/Wiki/Golarion.Aroden.ashx
+Autres dieux, Besmara, la Reine-Pirate, https://www.pathfinder-fr.org/Wiki/Golarion.Besmara.ashx
+Autres dieux, Dahak, le Dragon Destructeur, https://www.pathfinder-fr.org/Wiki/Golarion.Dahak.ashx
+Autres dieux, Droskar, le Forgeron Sombre, https://www.pathfinder-fr.org/Wiki/Golarion.Droskar.ashx
+Autres dieux, Ghlaunder, le Dieu Parasite, https://www.pathfinder-fr.org/Wiki/Golarion.Ghlaunder.ashx
+Autres dieux, Groétus, la Fin des Temps, https://www.pathfinder-fr.org/Wiki/Golarion.Gro%c3%a9tus.ashx
+Autres dieux, Kurgess, l'Homme Fort, https://www.pathfinder-fr.org/Wiki/Golarion.Kurgess.ashx
+Autres dieux, Lissala, la déesse des Runes, https://www.pathfinder-fr.org/Wiki/Golarion.Lissala.ashx
+Autres dieux, Milani, qui Fleurit Sans Cesse, https://www.pathfinder-fr.org/Wiki/Golarion.Milani.ashx
+Autres dieux, Razmir, le faux dieu, https://www.pathfinder-fr.org/Wiki/Golarion.Razmir.ashx
+Autres dieux, Sivanah, le Septième Voile, https://www.pathfinder-fr.org/Wiki/Golarion.Sivanah.ashx
+Autres dieux, Zyphus, le Sombre Faucheur, https://www.pathfinder-fr.org/Wiki/Golarion.Zyphus.ashx
+Quatre philosophies, Le diabolisme,, https://www.pathfinder-fr.org/Wiki/Golarion.Diabolisme.ashx
+Quatre philosophies, La Foi Verte, , https://www.pathfinder-fr.org/Wiki/Golarion.Foi%20Verte.ashx
+Quatre philosophies, Les Prophéties de Kalistrade,, https://pathfinder-fr.org/Wiki/Golarion.Proph%C3%A9ties%20de%20Kalistrade.ashx
+Quatre philosophies, La Voie du Murmure,, https://www.pathfinder-fr.org/Wiki/Golarion.Voie%20du%20Murmure.ashx
+Les autres cultes, Les archidaémons, 
+Les autres cultes, Les archidiables, 
+Les autres cultes, Les Dieux Extérieurs,, https://www.pathfinder-fr.org/Wiki/Golarion.Dieux%20Ext%c3%a9rieurs.ashx
+Les autres cultes, Les Grands Anciens, ,https://www.pathfinder-fr.org/Wiki/Golarion.Grands%20Anciens.ashx
+Les autres cultes, Les seigneurs-démons, ,https://www.pathfinder-fr.org/Wiki/Golarion.Seigneurs-d%c3%a9mons.ashx
+Les autres cultes, Les seigneurs empyréens, ,https://www.pathfinder-fr.org/Wiki/Golarion.Seigneurs%20empyr%c3%a9ens.ashx
+Les autres cultes, Le Panthéon Orque, ,https://www.pathfinder-fr.org/Wiki/Golarion.Panth%c3%a9on%20Orque.ashx
