@@ -90,13 +90,7 @@
                     .catch(error => {
                         console.error('Error loading HTML:', error);
                     });
-            }
-
-            // Charger le navbar et le footer
-            Promise.all([
-                loadHTML('navbar-container', 'navbar.html'),
-                loadHTML('footer-container', 'footer.html')
-            ]);
+            }       
 
             // Fonction pour créer une icône personnalisée
             function createCustomIcon(color) {
