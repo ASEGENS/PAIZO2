@@ -1,7 +1,7 @@
-lat,lng,title,description
-6450,1550,Lluire,Guilde de Sancrevin
+lat,lng,title,description,Couleur
+6450,1550,Lluire,Guilde de Sancrevin,#FF0000
 6555,1687,Lluire,Bourg Feuillage
-6287,1852,Lluire,Port-Alis
+6287,1852,Lluire,Port-Alis,#FCDC12
 5853,1465,Monrove,Miklagil
 6275,1380,Monrove,Ernestoval
 6855,1765,Avenio,Fontepino
