@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 80vh; /* Hauteur de la carte */
+            width: 100%; /* Largeur de la carte */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero text-white text-center" style="background: url('img/atlasbg.webp') no-repeat center center; background-size: cover; height: 30vh;">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <h1 class="display-3">Bienvenue dans l'univers d'Atlas</h1>
+            <p class="lead">Découvrez les mystères et l'histoire riche de ce monde fantastique.</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Carte Interactive de Vienia</h2>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialiser la carte
+            const map = L.map('map', {
+                crs: L.CRS.Simple, // Utilisation du système de coordonnées simple de Leaflet
+                minZoom: -5, // Niveau de zoom minimum
+                maxZoom: 2, // Niveau de zoom maximum
+            });
+
+            // Définir les dimensions de l'image (ajustez selon la taille réelle de votre image)
+            const w = 2000, h = 1500; // Largeur et hauteur de l'image
+            const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
+
+            // Définir les coins de l'image dans le système de coordonnées
+            const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+            const northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+            const bounds = new L.LatLngBounds(southWest, northEast);
+
+            // Ajouter l'image à la carte
+            L.imageOverlay(imageUrl, bounds).addTo(map);
+
+            // Adapter la vue à l'image
+            map.fitBounds(bounds);
+
+            // Ajouter des marqueurs et des popups (exemple)
+            L.marker(map.unproject([500, 1000], map.getMaxZoom() - 1))
+                .addTo(map)
+                .bindPopup("<b>Point d'intérêt</b><br>Ceci est un exemple de popup.").openPopup();
+
+            // Fonction pour charger le contenu HTML du navbar et du footer
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    });
+            }
+
+            // Charger le navbar et le footer
+            Promise.all([
+                loadHTML('navbar-container', 'navbar.html'),
+                loadHTML('footer-container', 'footer.html')
+            ]);
+        });
+    </script>
+</body>
+</html>
