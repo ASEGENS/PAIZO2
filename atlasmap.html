@@ -41,14 +41,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialiser la carte
             const map = L.map('map', {
-                crs: L.CRS.Simple, // Utilisation du système de coordonnées simple de Leaflet
-                minZoom: -5, // Niveau de zoom minimum
-                maxZoom: 2, // Niveau de zoom maximum
+                crs: L.CRS.Simple,
+                minZoom: -2, // Niveau de zoom minimum ajusté
+                maxZoom: 2,  // Niveau de zoom maximum
             });
 
             // Définir les dimensions de l'image
             const w = 7516, h = 3848; // Largeur et hauteur de l'image
-            const imageUrl = 'img/Vienia_Atlas.png'; // Chemin vers l'image
+            const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
 
             // Définir les coins de l'image dans le système de coordonnées
             const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
@@ -60,6 +60,9 @@
 
             // Adapter la vue à l'image
             map.fitBounds(bounds);
+
+            // Définir les limites maximales de dézoom
+            map.setMaxBounds(bounds);
 
             // Ajouter des marqueurs et des popups (exemple)
             L.marker(map.unproject([500, 1000], map.getMaxZoom() - 1))
