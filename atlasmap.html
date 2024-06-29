@@ -134,16 +134,15 @@
                         const title = row.nom;
                         const description = row.description;
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
-                        
+
                         const customIcon = createCustomIcon(color);
-                        
+
                         const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .addTo(map)
                             .bindPopup(`
                                 <b>${title}</b><br>${description}<br>
                                 <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
                                     Plus d'infos
-                                </
                                 </button>
                             `);
 
@@ -157,7 +156,7 @@
                                 <p><strong>Politique:</strong> ${row.Politique}</p>
                                 <p><strong>Population:</strong> ${row.Population}</p>
                                 <p><strong>Capital:</strong> ${row.capital}</p>
-                                <p><strong>Monument:</strong> ${row.monument}</p>
+                                <p><strong>Monument:</strong> ${row.Monument}</p>
                                 <p><strong>Religion:</strong> ${row.religion}</p>
                             `;
                         });
