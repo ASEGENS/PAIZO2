@@ -91,6 +91,16 @@
                 loadHTML('footer-container', 'footer.html')
             ]);
 
+            // Fonction pour créer une icône personnalisée
+            function createCustomIcon(color) {
+                return L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white;"></div>`,
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+            }
+
             // Lire les données CSV et ajouter les marqueurs
             Papa.parse('atlasmap.csv', {
                 download: true,
@@ -102,8 +112,11 @@
                         const lng = parseFloat(row.lng);
                         const title = row.title;
                         const description = row.description;
+                        const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
                         
-                        L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1))
+                        const customIcon = createCustomIcon(color);
+                        
+                        L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .addTo(map)
                             .bindPopup(`<b>${title}</b><br>${description}`);
                     });
