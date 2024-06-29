@@ -69,6 +69,9 @@
                 .addTo(map)
                 .bindPopup("<b>Point d'intérêt</b><br>Ceci est un exemple de popup.").openPopup();
 
+            L.marker(map.unproject([600, 1000], map.getMaxZoom() - 1))
+                .addTo(map)
+                .bindPopup("<b>Point d'intérêt</b><br>Ceci est un exemple de popup.").openPopup();
             // Fonction pour charger le contenu HTML du navbar et du footer
             function loadHTML(elementId, url) {
                 fetch(url)
