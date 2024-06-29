@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte Interactive</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
         #map {
             height: 80vh; /* Hauteur de la carte */
@@ -28,6 +28,7 @@
     <!-- Map Section -->
     <section class="map-section py-5">
         <div class="container">
+            <h2 class="text-center mb-4">Carte Interactive de Vienia</h2>
             <div id="map"></div>
         </div>
     </section>
@@ -48,7 +49,7 @@
 
             // Définir les dimensions de l'image
             const w = 7516, h = 3848; // Largeur et hauteur de l'image
-            const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
+            const imageUrl = 'img/Vienia_Atlas.png'; // Chemin vers l'image
 
             // Définir les coins de l'image dans le système de coordonnées
             const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
@@ -69,15 +70,15 @@
                 .addTo(map)
                 .bindPopup("<b>Point d'intérêt</b><br>Ceci est un exemple de popup.").openPopup();
 
-            L.marker(map.unproject([600, 1000], map.getMaxZoom() - 1))
-                .addTo(map)
-                .bindPopup("<b>Point d'intérêt</b><br>Ceci est un exemple de popup.").openPopup();
             // Fonction pour charger le contenu HTML du navbar et du footer
             function loadHTML(elementId, url) {
                 fetch(url)
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error loading HTML:', error);
                     });
             }
 
