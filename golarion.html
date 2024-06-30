@@ -12,7 +12,7 @@
     <div id="navbar-container"></div>
 
     <!-- Hero Section -->
-    <section class="hero text-white text-center" style="background: url('img/bg.png') no-repeat center center; background-size: cover;">
+    <section class="hero text-white text-center" style="background: url('img/bg.png') no-repeat center center; background-size: cover; height: 30vh;">
         <div class="d-flex flex-column justify-content-center align-items-center h-100">
             <h1 class="display-3">Bienvenue dans l'univers de Golarion</h1>
             <p class="lead">Découvrez les mystères et l'histoire riche de ce monde fantastique.</p>
@@ -23,8 +23,8 @@
     <section class="accordion-section py-5">
         <div class="container">
             <h2 class="text-center mb-4">Le Lore de Golarion</h2>
-            <div class="accordion" id="golarionAccordion">
-                <!-- Les sections de l'accordéon seront insérées ici par JavaScript -->
+            <div class="accordion" id="mainAccordion">
+                <!-- Les sections de l'accordéon seront insérées ici par JavaScript -->                
             </div>
         </div>
     </section>
@@ -38,47 +38,88 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            Papa.parse('golarion.csv', {
-                download: true,
-                header: true,
-                complete: function(results) {
-                    const data = results.data;
-                    const accordion = document.getElementById('golarionAccordion');
-                    data.forEach((row, index) => {
-                        const isFirst = index === 0;
-                        const accordionItem = document.createElement('div');
-                        accordionItem.className = 'accordion-item';
-                        accordionItem.innerHTML = `
-                            <h2 class="accordion-header" id="heading${index}">
-                                <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="collapse${index}">
-                                    ${row.title}
-                                </button>
-                            </h2>
-                            <div id="collapse${index}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${index}" data-bs-parent="#golarionAccordion">
-                                <div class="accordion-body">
-                                    ${row.content}
-                                </div>
-                            </div>
-                        `;
-                        accordion.appendChild(accordionItem);
+            function loadHTML(elementId, url) {
+                return fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
                     });
-                }
+            }
+
+            // Charger la navbar et le footer
+            Promise.all([
+                loadHTML('navbar-container', 'navbar.html'),
+                loadHTML('footer-container', 'footer.html')
+            ]).then(() => {
+                initializeAccordion();
             });
-        });
 
-        // Function to load HTML from external files
-        function loadHTML(elementId, url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
+            function initializeAccordion() {
+                Papa.parse('golarion.csv', {
+                    download: true,
+                    header: true,
+                    complete: function(results) {
+                        const data = results.data;
+                        const categories = {};
+
+                        // Organiser les données par catégorie
+                        data.forEach(row => {
+                            const category = row.Catégorie;
+                            if (!categories[category]) {
+                                categories[category] = [];
+                            }
+                            categories[category].push(row);
+                        });
+
+                        // Créer un accordéon pour chaque catégorie
+                        const mainAccordion = document.getElementById('mainAccordion');
+                        let firstCategory = true;
+                        for (const category in categories) {
+                            const isFirst = firstCategory;
+                            firstCategory = false;
+
+                            const accordionItem = document.createElement('div');
+                            accordionItem.className = 'accordion-item';
+                            accordionItem.innerHTML = `
+                                <h2 class="accordion-header" id="heading${category}">
+                                    <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${category}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="collapse${category}">
+                                        ${category}
+                                    </button>
+                                </h2>
+                                <div id="collapse${category}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${category}" data-bs-parent="#mainAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row" id="cardsContainer${category}">
+                                            <!-- Les cartes seront insérées ici -->
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            mainAccordion.appendChild(accordionItem);
+
+                            const cardsContainer = document.getElementById(`cardsContainer${category}`);
+                            categories[category].forEach(row => {
+                                const card = document.createElement('div');
+                                card.className = 'col-md-4 mb-4';
+                                card.innerHTML = `
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${row.Nom}</h5>
+                                            <p class="card-text"><strong>Description:</strong> ${row.Description}</p>
+                                            <p class="card-text"><strong>Localisation:</strong> ${row.Localisation}</p>
+                                            <p class="card-text"><strong>Histoire:</strong> ${row.Histoire}</p>
+                                            <p class="card-text"><strong>Créatures Notables:</strong> ${row['Créatures Notables']}</p>
+                                            <p class="card-text"><strong>Personnages Notables:</strong> ${row['Personnages Notables']}</p>
+                                            <p class="card-text"><strong>Organisations Notables:</strong> ${row['Organisations Notables']}</p>
+                                            <p class="card-text"><strong>Autres Détails:</strong> ${row['Autres Détails']}</p>
+                                        </div>
+                                    </div>
+                                `;
+                                cardsContainer.appendChild(card);
+                            });
+                        }
+                    }
                 });
-        }
-
-        // Load the navbar and footer
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('navbar-container', 'navbar.html');
-            loadHTML('footer-container', 'footer.html');
+            }
         });
     </script>
 </body>
