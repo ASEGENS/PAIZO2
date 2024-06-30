@@ -128,14 +128,14 @@
                             const modalContent = document.getElementById('modalContent');
                             modalContent.innerHTML = `
                                 <h5>${row.nom}</h5>
-                                <img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">
-                                <p><strong>Pays:</strong> ${row.Pays}</p>
-                                <p><strong>Description:</strong> ${row.description}</p>
-                                <p><strong>Politique:</strong> ${row.Politique}</p>
-                                <p><strong>Population:</strong> ${row.Population}</p>
-                                <p><strong>Capital:</strong> ${row.capital}</p>
-                                <p><strong>Monument:</strong> ${row.Monument}</p>
-                                <p><strong>Religion:</strong> ${row.religion}</p>
+                                ${row.image ? `<img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">` : ''}
+                                ${row.Pays ? `<p><strong>Pays:</strong> ${row.Pays}</p>` : ''}
+                                ${row.description ? `<p><strong>Description:</strong> ${row.description}</p>` : ''}
+                                ${row.Politique ? `<p><strong>Politique:</strong> ${row.Politique}</p>` : ''}
+                                ${row.Population ? `<p><strong>Population:</strong> ${row.Population}</p>` : ''}
+                                ${row.capital ? `<p><strong>Capital:</strong> ${row.capital}</p>` : ''}
+                                ${row.Monument ? `<p><strong>Monument:</strong> ${row.Monument}</p>` : ''}
+                                ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
                             `;
                         });
                     });
