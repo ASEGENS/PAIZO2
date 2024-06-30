@@ -3,7 +3,7 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 7033,3267,Melius,Guilde de Orlytlar,#FF0000,orlytlar.webp
 3858,712,Hiroyuki,Guilde de Hiroyuki,#FF0000,hiroyuki.webp
 1483,1881,Nata,Goldencross,#FF0000,goldencross.webp
-5383,496,Orania,Midgar,#FCDC12,Midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
+5383,496,Orania,Midgar,#FCDC12,midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
 6308,1838,Lluire,Port-Alis,#FCDC12,null,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
 5883,1448,Monrove,Miklagil,#FCDC12,null,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
 6858,1751,Avenio,Fontepino,#FCDC12,null,Fontepino est connue pour ses sources chaudes.,Royaume,Humain,Fontepino,Bains de Fontepino,Sarenrae
