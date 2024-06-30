@@ -3,38 +3,35 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 7033,3267,Melius,Guilde de Orlytlar,#FF0000,
 3858,712,Hiroyuki,Guilde de Hiroyuki,#FF0000,
 1483,1881,Nata,Goldencross,#FF0000,
-
-5378,500,Orania,Midgar,#FCDC12,Midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
-6287,1852,Lluire,Port-Alis,#FCDC12,null,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
-5853,1465,Monrove,Miklagil,#FCDC12,null,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
-6855,1765,Avenio,Fontepino,#FCDC12,null,Fontepino est connue pour ses sources chaudes.,Royaume,Humain,Fontepino,Bains de Fontepino,Sarenrae
-7045,1844,Boren,Véritas,#FCDC12,null,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
-6363,2272,Uriel,Valenbonne,#FCDC12,null,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
-8275,3537,Lagerstätte,Gueulfort,#FCDC12
-8175,3537,Emirya,Quadar,#FCDC12
-5781,2152,Ran,AnantaJala,#FCDC12,null,AnantaJala est une ville portuaire prospère.,Royaume,Humain,AnantaJala,Port Royal,Gozreh
-7775,3537,Admetos,Magna,#FCDC12
-7575,3970,Part,Lunos,#FCDC12
-8075,4143,Zal,Soleil,#FCDC12
-6725,6725,Iztkhall,Ictlanzuelti,#FCDC12
-9100,4533,Ridai,Meda,#FCDC12
-7375,4663,Empire Yoruba,Kalahari,#FCDC12
-6650,2108,Yang Xyu,Nagazaki,#FCDC12
-6600,2541,Kakita,Sakamoto,#FCDC12
-5925,2411,Toshi Hisui,#FCDC12
-5425,1891,Quingshan,Saki,#FCDC12
-5575,2498,Batsagia,Cheh,#FCDC12
-4100,1242,Nikova,Kitej,#FCDC12
-3650,2801,Nata,Nata City,#FCDC12
-2875,2671,Nihouti,Butor,#FCDC12
-3150,3147,Thanal,Adna,#FCDC12
-3725,3624,Taisinia,Fort-des-Francs,#FCDC12
-3225,3624,Le vaste cimetière,Le toit du monde,#FCDC12
-2700,3667,Drakaran,La pierre du dragon,#FCDC12
-
-6555,1687,Lluire,Bourg Feuillage,null,null,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
-6275,1380,Monrove,Ernestoval,null,null,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
-
+5383,496,Orania,Midgar,#FCDC12,Midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
+6308,1838,Lluire,Port-Alis,#FCDC12,null,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
+5883,1448,Monrove,Miklagil,#FCDC12,null,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
+6858,1751,Avenio,Fontepino,#FCDC12,null,Fontepino est connue pour ses sources chaudes.,Royaume,Humain,Fontepino,Bains de Fontepino,Sarenrae
+7058,1838,Boren,Véritas,#FCDC12,null,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
+6358,2271,Uriel,Valenbonne,#FCDC12,null,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
+6358,2531,Lagerstätte,Gueulfort,#FCDC12
+6258,2531,Emirya,Quadar,#FCDC12
+5783,2141,Ran,AnantaJala,#FCDC12,null,AnantaJala est une ville portuaire prospère.,Royaume,Humain,AnantaJala,Port Royal,Gozreh
+5858,2531,Admetos,Magna,#FCDC12
+5658,2964,Part,Lunos,#FCDC12
+6158,3137,Zal,Soleil,#FCDC12
+4808,2964,Iztkhall,Ictlanzuelti,#FCDC12
+7183,3527,Ridai,Meda,#FCDC12
+5458,3657,Empire Yoruba,Kalahari,#FCDC12
+4733,1102,Yang Xyu,Nagazaki,#FCDC12
+4683,1535,Kakita,Sakamoto,#FCDC12
+4008,1405,Hosukai,Toshi Hisui,#FCDC12
+3508,885,Quingshan,Saki,#FCDC12
+3658,1492,Batsagia,Cheh,#FCDC12
+2183,236,Nikova,Kitej,#FCDC12
+1733,1795,Nata,Nata City,#FCDC12
+958,1665,Nihouti,Butor,#FCDC12
+1233,2141,Thanal,Adna,#FCDC12
+1808,2618,Taisinia,Fort-des-Francs,#FCDC12
+1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12
+783,2661,Drakaran,La pierre du dragon,#FCDC12
+6558,1665,Lluire,Bourg Feuillage,null,null,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
+6283,1362,Monrove,Ernestoval,null,null,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
 6800,470,,Océan Hvél,#0000FF
 3800,100,,Océan Vindogum,#0000FF
 1600,950,,Océan Migjorn,#0000FF
