@@ -7,26 +7,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            height: 100vh; /* Hauteur de la carte */
-            width: 100%; /* Largeur de la carte */
-        }
-        .custom-div-icon {
-            background: transparent;
-            border: none;
-        }
-    </style>
 </head>
 <body>    
     <!-- Map Section -->
     <section class="map-section">
-            <div id="map"></div>
+        <div id="map"></div>
     </section>   
 
     <!-- Modal -->
@@ -59,8 +44,8 @@
                 maxZoom: 2,  // Niveau de zoom maximum
             });
 
-            // Définir les dimensions de l'image en tenant compte du pourcentage de remplissage
-            const w = 7516, h = 3848; // Largeur et hauteur augmentées de 25%
+            // Définir les dimensions de l'image
+            const w = 7516, h = 3848; // Largeur et hauteur de l'image
             const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
 
             // Définir les coins de l'image dans le système de coordonnées
@@ -77,19 +62,6 @@
             // Définir les limites maximales de dézoom
             map.setMaxBounds(bounds);
 
-            // Fonction pour charger le contenu HTML du navbar et du footer
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => response.text())
-                    .then(data => {
-                        console.log(`Loaded content into #${elementId}`);
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error('Error loading HTML:', error);
-                    });
-            }       
-
             // Fonction pour créer une icône personnalisée
             function createCustomIcon(color) {
                 return L.divIcon({
@@ -99,6 +71,11 @@
                     iconAnchor: [12, 12]
                 });
             }
+
+            const markers = {
+                'capitales': [],
+                'guildes': []
+            };
 
             // Lire les données CSV et ajouter les marqueurs
             Papa.parse('atlasmap.csv', {
@@ -116,7 +93,6 @@
                         const customIcon = createCustomIcon(color);
 
                         const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
-                            .addTo(map)
                             .bindPopup(`
                                 <b>${title}</b><br>${description}<br>
                                 <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
@@ -138,9 +114,59 @@
                                 ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
                             `;
                         });
+
+                        // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
+                        marker.addTo(map);
+
+                        if (color === '#FCDC12') {
+                            markers['capitales'].push(marker);
+                        } else if (color === '#FF0000') {
+                            markers['guildes'].push(marker);
+                        }
                     });
                 }
             });
+
+            // Ajouter une légende
+            const legend = L.control({ position: 'topleft' });
+
+            legend.onAdd = function(map) {
+                const div = L.DomUtil.create('div', 'legend');
+                div.innerHTML = `
+                    <h4>Légende</h4>
+                    <label><input type="checkbox" checked id="filter-capitales"> Capitales (#FCDC12)</label><br>
+                    <label><input type="checkbox" checked id="filter-guildes"> Guildes (#FF0000)</label><br>
+                `;
+                return div;
+            };
+
+            legend.addTo(map);
+
+            // Fonction pour gérer les filtres
+            function updateMarkers() {
+                const showCapitales = document.getElementById('filter-capitales').checked;
+                const showGuildes = document.getElementById('filter-guildes').checked;
+
+                markers['capitales'].forEach(marker => {
+                    if (showCapitales) {
+                        marker.addTo(map);
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
+
+                markers['guildes'].forEach(marker => {
+                    if (showGuildes) {
+                        marker.addTo(map);
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
+            }
+
+            // Ajouter des écouteurs d'événements pour les filtres
+            document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
+            document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
         });
     </script>
 </body>

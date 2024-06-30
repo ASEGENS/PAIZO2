@@ -269,3 +269,32 @@ body {
 .accordion-header {
     margin-bottom: 5px; /* Espacement sous le header */
 }
+
+/* Legend Styles */
+.legend {
+    background: white;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.legend h4 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.legend label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.legend input {
+    margin-right: 5px;
+}
+
