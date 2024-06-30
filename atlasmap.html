@@ -115,7 +115,7 @@
 
                         const customIcon = createCustomIcon(color);
 
-                        const marker = L.marker(map.unproject([lat * (w / 7516), lng * (h / 3848)], map.getMaxZoom() - 1), { icon: customIcon })
+                        const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .addTo(map)
                             .bindPopup(`
                                 <b>${title}</b><br>${description}<br>
