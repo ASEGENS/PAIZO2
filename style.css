@@ -59,7 +59,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     border-radius: 10px;
@@ -68,7 +68,7 @@ body {
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5rem;
     border-radius: 10px;
@@ -93,11 +93,15 @@ body {
 @media (max-width: 768px) {
     .hero {
         height: auto; /* Allow height to adjust based on content */
-        padding: 40px 20px;
+        padding: 20px 10px;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .hero .btn {
@@ -265,4 +269,3 @@ body {
 .accordion-header {
     margin-bottom: 5px; /* Espacement sous le header */
 }
-
