@@ -144,8 +144,8 @@
                     markers['mers'].push(marker);
                 } else if (color === '#2b839e') {
                     markers['golfs'].push(marker);
-                } else if (color === '#nouvelle_couleur') { // Remplacer par la couleur pour montagnes
-                    markers['montagnes'].push(marker);
+                } else if (color === '#F0F0F2') {
+                    markers['villes'].push(marker);
                 }
             });
         }
@@ -162,7 +162,7 @@
             <label><input type="checkbox" checked id="filter-guildes"> Guildes</label><br>
             <label><input type="checkbox" checked id="filter-mers"> Mers</label><br>
             <label><input type="checkbox" checked id="filter-golfs"> Golfs</label><br>
-            <label><input type="checkbox" checked id="filter-montagnes"> Montagnes/label><br>
+            <label><input type="checkbox" checked id="filter-villes"> villes</label><br>
         `;
         return div;
     };
@@ -175,7 +175,7 @@
         const showGuildes = document.getElementById('filter-guildes').checked;
         const showMers = document.getElementById('filter-mers').checked;
         const showGolfs = document.getElementById('filter-golfs').checked;
-        const showMontagnes = document.getElementById('filter-montagnes').checked;
+        const showMontagnes = document.getElementById('filter-villes').checked;
 
         markers['capitales'].forEach(marker => {
             if (showCapitales) {
@@ -209,7 +209,7 @@
             }
         });
 
-        markers['montagnes'].forEach(marker => {
+        markers['villes'].forEach(marker => {
             if (showMontagnes) {
                 marker.addTo(map);
             } else {
@@ -223,7 +223,7 @@
     document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
     document.getElementById('filter-mers').addEventListener('change', updateMarkers);
     document.getElementById('filter-golfs').addEventListener('change', updateMarkers);
-    document.getElementById('filter-montagnes').addEventListener('change', updateMarkers);
+    document.getElementById('filter-villes').addEventListener('change', updateMarkers);
 });
 
     </script>

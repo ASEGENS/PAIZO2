@@ -49,8 +49,8 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 1808,2618,Taisinia,Fort-des-Francs,#FCDC12,fort_des_francs.webp
 1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,le_toit_du_monde.webp
 783,2661,Drakaran,La pierre du dragon,#FCDC12,la_pierre_du_dragon.webp
-6558,1665,Lluire,Bourg Feuillage,null,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
-6283,1362,Monrove,Ernestoval,null,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
+6558,1665,Lluire,Bourg Feuillage,#F0F0F2,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
+6283,1362,Monrove,Ernestoval,#F0F0F2,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
 
 
 
