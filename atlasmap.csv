@@ -8,34 +8,34 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 5883,1448,Monrove,Miklagil,#FCDC12,.webp,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
 6858,1751,Avenio,Fontepino,#FCDC12,.webp,Fontepino est connue pour ses sources chaudes.,Royaume,Humain,Fontepino,Bains de Fontepino,Sarenrae
 7058,1838,Boren,Véritas,#FCDC12,.webp,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
-6358,2271,Uriel,Valenbonne,#FCDC12,.webp,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
-6358,2531,Lagerstätte,Gueulfort,#FCDC12,.webp
-6258,2531,Emirya,Quadar,#FCDC12,.webp
-5783,2141,Ran,AnantaJala,#FCDC12,null,AnantaJala est une ville portuaire prospère.,Royaume,Humain,AnantaJala,Port Royal,Gozreh
-5858,2531,Admetos,Magna,#FCDC12,.webp
-5658,2964,Part,Lunos,#FCDC12,.webp
-6158,3137,Zal,Soleil,#FCDC12,.webp
-4808,2964,Iztkhall,Ictlanzuelti,#FCDC12,.webp
-7183,3527,Ridai,Meda,#FCDC12,.webp
-5458,3657,Empire Yoruba,Kalahari,#FCDC12,.webp
-4733,1102,Yang Xyu,Nagazaki,#FCDC12,.webp
-4683,1535,Kakita,Sakamoto,#FCDC12,.webp
-4008,1405,Hosukai,Toshi Hisui,#FCDC12,.webp
-3508,885,Quingshan,Saki,#FCDC12,.webp
-3658,1492,Batsagia,Cheh,#FCDC12,.webp
-2183,236,Nikova,Kitej,#FCDC12,.webp
-1733,1795,Nata,Nata City,#FCDC12,.webp
-958,1665,Nihouti,Butor,#FCDC12,.webp
-1233,2141,Thanal,Adna,#FCDC12,.webp
-1808,2618,Taisinia,Fort-des-Francs,#FCDC12,.webp
-1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,.webp
-783,2661,Drakaran,La pierre du dragon,#FCDC12,.webp
-6558,1665,Lluire,Bourg Feuillage,null,.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
-6283,1362,Monrove,Ernestoval,null,.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
-6800,470,,Océan Hvél,#0000FF,.webp
-3800,100,,Océan Vindogum,#0000FF,.webp
-1600,950,,Océan Migjorn,#0000FF,.webp
-2580,1600,,Océan Mistralia,#0000FF,.webp
-4800,2500,,Océan Zéphyréen,#0000FF,.webp
-360,3550,,Océan Aquiléen,#0000FF,.webp
+6358,2271,Uriel,Valenbonne,#FCDC12,valenbonne.webp,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
+6358,2531,Lagerstätte,Gueulfort,#FCDC12,gueulfort.webp
+6258,2531,Emirya,Quadar,#FCDC12,quadar.webp
+5783,2141,Ran,AnantaJala,#FCDC12,anantajala.webp,AnantaJala est une ville portuaire prospère.,Royaume,Humain,AnantaJala,Port Royal,Gozreh
+5858,2531,Admetos,Magna,#FCDC12,magna.webp
+5658,2964,Part,Lunos,#FCDC12,lunos.webp
+6158,3137,Zal,Soleil,#FCDC12,soleil.webp
+4808,2964,Iztkhall,Ictlanzuelti,#FCDC12,ictlanzuelti.webp
+7183,3527,Ridai,Meda,#FCDC12,meda.webp
+5458,3657,Empire Yoruba,Kalahari,#FCDC12,kalahari.webp
+4733,1102,Yang Xyu,Nagazaki,#FCDC12,nagazaki.webp
+4683,1535,Kakita,Sakamoto,#FCDC12,sakamoto.webp
+4008,1405,Hosukai,Toshi Hisui,#FCDC12,toshi_hisui.webp
+3508,885,Quingshan,Saki,#FCDC12,saki.webp
+3658,1492,Batsagia,Cheh,#FCDC12,cheh.webp
+2183,236,Nikova,Kitej,#FCDC12,kitej.webp
+1733,1795,Nata,Nata City,#FCDC12,nata_city.webp
+958,1665,Nihouti,Butor,#FCDC12,butor.webp
+1233,2141,Thanal,Adna,#FCDC12,adna.webp
+1808,2618,Taisinia,Fort-des-Francs,#FCDC12,fort_des_francs.webp
+1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,le_toit_du_monde.webp
+783,2661,Drakaran,La pierre du dragon,#FCDC12,la_pierre_du_dragon.webp
+6558,1665,Lluire,Bourg Feuillage,null,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
+6283,1362,Monrove,Ernestoval,null,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
+6800,470,,Océan Hvél,#0000FF,hvél.webp
+3800,100,,Océan Vindogum,#0000FF,vindogum.webp
+1600,950,,Océan Migjorn,#0000FF,migjorn.webp
+2580,1600,,Océan Mistralia,#0000FF,mistralia.webp
+4800,2500,,Océan Zéphyréen,#0000FF,zéphyréen.webp
+360,3550,,Océan Aquiléen,#0000FF,aquiléen.webp
 6500,3730,,Océan Albe,#0000FF,albe.webp
