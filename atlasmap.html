@@ -115,12 +115,18 @@
                 const customIcon = createCustomIcon(color);
 
                 const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
-                .bindPopup(`
-                    <b>${title}</b><br>${row.Pays}<br><br>${row.Politique}<br><br>${row.Population}<br><br>${description.substring(0, 50)}...<br>
-                    <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
-                        Plus d'infos
-                    </button>
-                `);
+                    // .bindPopup(`
+                    //     <b>${title}</b><br>${Pays}<br><br>${Politique}<br><br>${Population}<br><br>${description}<br>
+                    //     <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
+                    //         Plus d'infos
+                    //     </button>
+                    // `);
+                    .bindPopup(`
+                        <b>${title}</b><br>${Pays}<br><br>${Politique}<br><br>${Population}<br><br>${description.substring(0, 50)}...<br>
+                        <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
+                            Plus d'infos
+                        </button>
+                    `);
 
 
                 marker.on('click', function() {
