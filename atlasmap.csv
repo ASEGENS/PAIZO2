@@ -1,4 +1,23 @@
 lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument,religion
+6800,470,,Océan Hvél,#0000FF,hvél.webp
+3800,100,,Océan Vindogum,#0000FF,vindogum.webp
+1600,950,,Océan Migjorn,#0000FF,migjorn.webp
+2580,1600,,Océan Mistralia,#0000FF,mistralia.webp
+4800,2500,,Océan Zéphyréen,#0000FF,zéphyréen.webp
+360,3550,,Océan Aquiléen,#0000FF,aquiléen.webp
+6500,3730,,Océan Albe,#0000FF,albe.webp
+4320,1890,,Mer d'Hikari,#1c5fa6,mer.webp
+4390,1180,,Mer d'Isora,#1c5fa6,mer.webp
+4920,3120,,Mer des Boucaniers,#1c5fa6,mer.webp
+6350,1990,,Mer du Lluire,#1c5fa6,mer.webp
+6873,1690,,Mer du Boren,#1c5fa6,mer.webp
+3900,2480,,Golf de Boewulf,#2b839e,golf.webp
+4600,2820,,Golf du Nahual,#2b839e,golf.webp
+5580,3810,,Côte Saphyréenne,#2b839e,golf.webp
+5870,1800,,Golf du Monrove,#2b839e,golf.webp
+3340,1350,,Golf du Ponant,#2b839e,golf.webp
+4840,1340,,Golf du Levant,#2b839e,golf.webp
+7180,2573,,Golf des Fermoires,#2b839e,golf.webp
 6483,1535,Lluire,Guilde de Sancrevin,#FF0000,fortsancrevin.webp,Lluire est un pays historique connue pour sa guilde de Sancrevin.,République,Humain,Lluire,Sancrevin,Gorum
 7033,3267,Melius,Guilde de Orlytlar,#FF0000,orlytlar.webp
 3858,712,Hiroyuki,Guilde de Hiroyuki,#FF0000,hiroyuki.webp
@@ -7,7 +26,7 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 6308,1838,Lluire,Port-Alis,#FCDC12,.webp,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
 5883,1448,Monrove,Miklagil,#FCDC12,.webp,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
 6858,1751,Avenio,Fontepino,#FCDC12,.webp,Fontepino est connue pour ses sources chaudes.,Royaume,Humain,Fontepino,Bains de Fontepino,Sarenrae
-7058,1838,Boren,Véritas,#FCDC12,.webp,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
+7058,1838,Boren,Véritas,#FCDC12,véritas.webp,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
 6358,2271,Uriel,Valenbonne,#FCDC12,valenbonne.webp,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
 6358,2531,Lagerstätte,Gueulfort,#FCDC12,gueulfort.webp
 6258,2531,Emirya,Quadar,#FCDC12,quadar.webp
@@ -30,12 +49,9 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 1808,2618,Taisinia,Fort-des-Francs,#FCDC12,fort_des_francs.webp
 1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,le_toit_du_monde.webp
 783,2661,Drakaran,La pierre du dragon,#FCDC12,la_pierre_du_dragon.webp
+
 6558,1665,Lluire,Bourg Feuillage,null,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
 6283,1362,Monrove,Ernestoval,null,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
-6800,470,,Océan Hvél,#0000FF,hvél.webp
-3800,100,,Océan Vindogum,#0000FF,vindogum.webp
-1600,950,,Océan Migjorn,#0000FF,migjorn.webp
-2580,1600,,Océan Mistralia,#0000FF,mistralia.webp
-4800,2500,,Océan Zéphyréen,#0000FF,zéphyréen.webp
-360,3550,,Océan Aquiléen,#0000FF,aquiléen.webp
-6500,3730,,Océan Albe,#0000FF,albe.webp
+
+
+
