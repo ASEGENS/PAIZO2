@@ -1,8 +1,9 @@
 lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument,religion
-6450,1550,Lluire,Guilde de Sancrevin,#FF0000,null,Lluire est un pays historique connue pour sa guilde de Sancrevin.,République,Humain,Lluire,Sancrevin,Gorum
-8950,4273,Melius,Guilde de Orlytlar,#FF0000,
-5775,1718,Hiroyuki,Guilde de Hiroyuki,#FF0000,
-3400,2887,Nata,Goldencross,#FF0000,
+6483,1535,Lluire,Guilde de Sancrevin,#FF0000,null,Lluire est un pays historique connue pour sa guilde de Sancrevin.,République,Humain,Lluire,Sancrevin,Gorum
+7033,3267,Melius,Guilde de Orlytlar,#FF0000,
+3858,712,Hiroyuki,Guilde de Hiroyuki,#FF0000,
+1483,1881,Nata,Goldencross,#FF0000,
+
 5378,500,Orania,Midgar,#FCDC12,Midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
 6287,1852,Lluire,Port-Alis,#FCDC12,null,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
 5853,1465,Monrove,Miklagil,#FCDC12,null,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
@@ -30,8 +31,10 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 3725,3624,Taisinia,Fort-des-Francs,#FCDC12
 3225,3624,Le vaste cimetière,Le toit du monde,#FCDC12
 2700,3667,Drakaran,La pierre du dragon,#FCDC12
+
 6555,1687,Lluire,Bourg Feuillage,null,null,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
 6275,1380,Monrove,Ernestoval,null,null,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
+
 6800,470,,Océan Hvél,#0000FF
 3800,100,,Océan Vindogum,#0000FF
 1600,950,,Océan Migjorn,#0000FF
