@@ -36,8 +36,6 @@ body {
     margin-right: 20px;
 }
 
-
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -90,6 +88,21 @@ body {
 .hero .btn:hover {
     background-color: #c9a227;
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+    }
 }
 
 /* About Section */
@@ -252,5 +265,4 @@ body {
 .accordion-header {
     margin-bottom: 5px; /* Espacement sous le header */
 }
-
 
