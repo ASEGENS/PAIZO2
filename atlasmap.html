@@ -52,137 +52,180 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialiser la carte
-            const map = L.map('map', {
-                crs: L.CRS.Simple,
-                minZoom: -2, // Niveau de zoom minimum ajusté
-                maxZoom: 2,  // Niveau de zoom maximum
-            });
+    // Initialiser la carte
+    const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -2, // Niveau de zoom minimum ajusté
+        maxZoom: 2,  // Niveau de zoom maximum
+    });
 
-            // Définir les dimensions de l'image
-            const w = 7516, h = 3848; // Largeur et hauteur de l'image
-            const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
+    // Définir les dimensions de l'image
+    const w = 7516, h = 3848; // Largeur et hauteur de l'image
+    const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
 
-            // Définir les coins de l'image dans le système de coordonnées
-            const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
-            const northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
-            const bounds = new L.LatLngBounds(southWest, northEast);
+    // Définir les coins de l'image dans le système de coordonnées
+    const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+    const northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+    const bounds = new L.LatLngBounds(southWest, northEast);
 
-            // Ajouter l'image à la carte
-            L.imageOverlay(imageUrl, bounds).addTo(map);
+    // Ajouter l'image à la carte
+    L.imageOverlay(imageUrl, bounds).addTo(map);
 
-            // Adapter la vue à l'image
-            map.fitBounds(bounds);
+    // Adapter la vue à l'image
+    map.fitBounds(bounds);
 
-            // Définir les limites maximales de dézoom
-            map.setMaxBounds(bounds);
+    // Définir les limites maximales de dézoom
+    map.setMaxBounds(bounds);
 
-            // Fonction pour créer une icône personnalisée
-            function createCustomIcon(color) {
-                return L.divIcon({
-                    className: 'custom-div-icon',
-                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white;"></div>`,
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
+    // Fonction pour créer une icône personnalisée
+    function createCustomIcon(color) {
+        return L.divIcon({
+            className: 'custom-div-icon',
+            html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white;"></div>`,
+            iconSize: [24, 24],
+            iconAnchor: [12, 12]
+        });
+    }
+
+    const markers = {
+        'capitales': [],
+        'guildes': [],
+        'mers': [],
+        'golfs': [],
+        'montagnes': [] // Nouvelle catégorie
+    };
+
+    // Lire les données CSV et ajouter les marqueurs
+    Papa.parse('atlasmap.csv', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const data = results.data;
+            data.forEach(function(row, index) {
+                const lat = parseFloat(row.lat);
+                const lng = parseFloat(row.lng);
+                const title = row.nom;
+                const description = row.description;
+                const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
+
+                const customIcon = createCustomIcon(color);
+
+                const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
+                    .bindPopup(`
+                        <b>${title}</b><br>${description}<br>
+                        <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
+                            Plus d'infos
+                        </button>
+                    `);
+
+                marker.on('click', function() {
+                    const modalContent = document.getElementById('modalContent');
+                    modalContent.innerHTML = `
+                        <h5>${row.nom}</h5>
+                        ${row.image ? `<img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">` : ''}
+                        ${row.Pays ? `<p><strong>Pays:</strong> ${row.Pays}</p>` : ''}
+                        ${row.description ? `<p><strong>Description:</strong> ${row.description}</p>` : ''}
+                        ${row.Politique ? `<p><strong>Politique:</strong> ${row.Politique}</p>` : ''}
+                        ${row.Population ? `<p><strong>Population:</strong> ${row.Population}</p>` : ''}
+                        ${row.capital ? `<p><strong>Capital:</strong> ${row.capital}</p>` : ''}
+                        ${row.Monument ? `<p><strong>Monument:</strong> ${row.Monument}</p>` : ''}
+                        ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
+                    `;
                 });
-            }
 
-            const markers = {
-                'capitales': [],
-                'guildes': []
-            };
+                // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
+                marker.addTo(map);
 
-            // Lire les données CSV et ajouter les marqueurs
-            Papa.parse('atlasmap.csv', {
-                download: true,
-                header: true,
-                complete: function(results) {
-                    const data = results.data;
-                    data.forEach(function(row, index) {
-                        const lat = parseFloat(row.lat);
-                        const lng = parseFloat(row.lng);
-                        const title = row.nom;
-                        const description = row.description;
-                        const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
-
-                        const customIcon = createCustomIcon(color);
-
-                        const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
-                            .bindPopup(`
-                                <b>${title}</b><br>${description}<br>
-                                <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
-                                    Plus d'infos
-                                </button>
-                            `);
-
-                        marker.on('click', function() {
-                            const modalContent = document.getElementById('modalContent');
-                            modalContent.innerHTML = `
-                                <h5>${row.nom}</h5>
-                                ${row.image ? `<img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">` : ''}
-                                ${row.Pays ? `<p><strong>Pays:</strong> ${row.Pays}</p>` : ''}
-                                ${row.description ? `<p><strong>Description:</strong> ${row.description}</p>` : ''}
-                                ${row.Politique ? `<p><strong>Politique:</strong> ${row.Politique}</p>` : ''}
-                                ${row.Population ? `<p><strong>Population:</strong> ${row.Population}</p>` : ''}
-                                ${row.capital ? `<p><strong>Capital:</strong> ${row.capital}</p>` : ''}
-                                ${row.Monument ? `<p><strong>Monument:</strong> ${row.Monument}</p>` : ''}
-                                ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
-                            `;
-                        });
-
-                        // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
-                        marker.addTo(map);
-
-                        if (color === '#FCDC12') {
-                            markers['capitales'].push(marker);
-                        } else if (color === '#FF0000') {
-                            markers['guildes'].push(marker);
-                        }
-                    });
+                if (color === '#FCDC12') {
+                    markers['capitales'].push(marker);
+                } else if (color === '#FF0000') {
+                    markers['guildes'].push(marker);
+                } else if (color === '#1c5fa6') {
+                    markers['mers'].push(marker);
+                } else if (color === '#2b839e') {
+                    markers['golfs'].push(marker);
+                } else if (color === '#nouvelle_couleur') { // Remplacer par la couleur pour montagnes
+                    markers['montagnes'].push(marker);
                 }
             });
+        }
+    });
 
-            // Ajouter une légende
-            const legend = L.control({ position: 'topleft' });
+    // Ajouter une légende
+    const legend = L.control({ position: 'topleft' });
 
-            legend.onAdd = function(map) {
-                const div = L.DomUtil.create('div', 'legend');
-                div.innerHTML = `
-                    <h4>Légende</h4>
-                    <label><input type="checkbox" checked id="filter-capitales"> Capitales (#FCDC12)</label><br>
-                    <label><input type="checkbox" checked id="filter-guildes"> Guildes (#FF0000)</label><br>
-                `;
-                return div;
-            };
+    legend.onAdd = function(map) {
+        const div = L.DomUtil.create('div', 'legend');
+        div.innerHTML = `
+            <h4>Légende</h4>
+            <label><input type="checkbox" checked id="filter-capitales"> Capitales (#FCDC12)</label><br>
+            <label><input type="checkbox" checked id="filter-guildes"> Guildes (#FF0000)</label><br>
+            <label><input type="checkbox" checked id="filter-mers"> Mers (#1c5fa6)</label><br>
+            <label><input type="checkbox" checked id="filter-golfs"> Golfs (#2b839e)</label><br>
+            <label><input type="checkbox" checked id="filter-montagnes"> Montagnes (#nouvelle_couleur)</label><br> <!-- Remplacer par la couleur pour montagnes -->
+        `;
+        return div;
+    };
 
-            legend.addTo(map);
+    legend.addTo(map);
 
-            // Fonction pour gérer les filtres
-            function updateMarkers() {
-                const showCapitales = document.getElementById('filter-capitales').checked;
-                const showGuildes = document.getElementById('filter-guildes').checked;
+    // Fonction pour gérer les filtres
+    function updateMarkers() {
+        const showCapitales = document.getElementById('filter-capitales').checked;
+        const showGuildes = document.getElementById('filter-guildes').checked;
+        const showMers = document.getElementById('filter-mers').checked;
+        const showGolfs = document.getElementById('filter-golfs').checked;
+        const showMontagnes = document.getElementById('filter-montagnes').checked;
 
-                markers['capitales'].forEach(marker => {
-                    if (showCapitales) {
-                        marker.addTo(map);
-                    } else {
-                        map.removeLayer(marker);
-                    }
-                });
-
-                markers['guildes'].forEach(marker => {
-                    if (showGuildes) {
-                        marker.addTo(map);
-                    } else {
-                        map.removeLayer(marker);
-                    }
-                });
+        markers['capitales'].forEach(marker => {
+            if (showCapitales) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
             }
-
-            // Ajouter des écouteurs d'événements pour les filtres
-            document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
-            document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
         });
+
+        markers['guildes'].forEach(marker => {
+            if (showGuildes) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
+            }
+        });
+
+        markers['mers'].forEach(marker => {
+            if (showMers) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
+            }
+        });
+
+        markers['golfs'].forEach(marker => {
+            if (showGolfs) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
+            }
+        });
+
+        markers['montagnes'].forEach(marker => {
+            if (showMontagnes) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
+            }
+        });
+    }
+
+    // Ajouter des écouteurs d'événements pour les filtres
+    document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
+    document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
+    document.getElementById('filter-mers').addEventListener('change', updateMarkers);
+    document.getElementById('filter-golfs').addEventListener('change', updateMarkers);
+    document.getElementById('filter-montagnes').addEventListener('change', updateMarkers);
+});
+
     </script>
 </body>
 </html>
