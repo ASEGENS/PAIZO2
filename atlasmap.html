@@ -106,17 +106,22 @@
                 const lng = parseFloat(row.lng);
                 const title = row.nom;
                 const description = row.description;
+                const Pays = row.Pays;
+                const Politique = row.Politique;
+                const Population = row.Population;
+
                 const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
 
                 const customIcon = createCustomIcon(color);
 
                 const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
-                    .bindPopup(`
-                        <b>${title}</b><br>${description}<br>
-                        <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
-                            Plus d'infos
-                        </button>
-                    `);
+                .bindPopup(`
+                    <b>${title}</b><br>${row.Pays}<br><br>${row.Politique}<br><br>${row.Population}<br><br>${description.substring(0, 50)}...<br>
+                    <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
+                        Plus d'infos
+                    </button>
+                `);
+
 
                 marker.on('click', function() {
                     const modalContent = document.getElementById('modalContent');
