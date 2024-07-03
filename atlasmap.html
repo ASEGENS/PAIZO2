@@ -78,10 +78,10 @@
             map.setMaxBounds(bounds);
         
             // Fonction pour créer une icône personnalisée
-            function createCustomIcon(color) {
+            function createCustomIcon(color, borderColor = 'white') {
                 return L.divIcon({
                     className: 'custom-div-icon',
-                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white;"></div>`,
+                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid ${borderColor};"></div>`,
                     iconSize: [24, 24],
                     iconAnchor: [12, 12]
                 });
@@ -113,8 +113,9 @@
                         const descriptionShort = description.length > 100 ? description.substring(0, 100) + '...' : description;
         
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
+                        const borderColor = description ? 'white' : 'black'; // Définir la couleur de la bordure en fonction de la présence de la description
         
-                        const customIcon = createCustomIcon(color);
+                        const customIcon = createCustomIcon(color, borderColor);
         
                         const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .bindPopup(`
@@ -181,12 +182,12 @@
             // Fonction pour gérer les filtres
             function updateMarkers() {
                 const showCapitales = document.getElementById('filter-capitales').checked;
+                const showVilles = document.getElementById('filter-villes').checked;
                 const showGuildes = document.getElementById('filter-guildes').checked;
                 const showMers = document.getElementById('filter-mers').checked;
                 const showGolfs = document.getElementById('filter-golfs').checked;
                 const showOceans = document.getElementById('filter-océans').checked;
-                const showVilles = document.getElementById('filter-villes').checked;
-        
+
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
                         marker.addTo(map);
@@ -194,7 +195,7 @@
                         map.removeLayer(marker);
                     }
                 });
-        
+
                 markers['guildes'].forEach(marker => {
                     if (showGuildes) {
                         marker.addTo(map);
@@ -202,7 +203,7 @@
                         map.removeLayer(marker);
                     }
                 });
-        
+
                 markers['mers'].forEach(marker => {
                     if (showMers) {
                         marker.addTo(map);
@@ -210,7 +211,7 @@
                         map.removeLayer(marker);
                     }
                 });
-        
+
                 markers['golfs'].forEach(marker => {
                     if (showGolfs) {
                         marker.addTo(map);
@@ -218,7 +219,7 @@
                         map.removeLayer(marker);
                     }
                 });
-        
+
                 markers['océans'].forEach(marker => {
                     if (showOceans) {
                         marker.addTo(map);
@@ -226,7 +227,7 @@
                         map.removeLayer(marker);
                     }
                 });
-        
+
                 markers['villes'].forEach(marker => {
                     if (showVilles) {
                         marker.addTo(map);
@@ -235,7 +236,7 @@
                     }
                 });
             }
-        
+
             // Ajouter des écouteurs d'événements pour les filtres
             document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
             document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
@@ -244,8 +245,6 @@
             document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
         });
-        </script>        
-        
+    </script>
 </body>
 </html>
-
