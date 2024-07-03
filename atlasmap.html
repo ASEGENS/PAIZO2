@@ -94,7 +94,6 @@
                 'golfs': [],
                 'océans': [],
                 'villes': []
-
             };
         
             // Lire les données CSV et ajouter les marqueurs
@@ -185,7 +184,7 @@
                 const showGuildes = document.getElementById('filter-guildes').checked;
                 const showMers = document.getElementById('filter-mers').checked;
                 const showGolfs = document.getElementById('filter-golfs').checked;
-                const showOcéans = document.getElementById('filter-Océans').checked;
+                const showOceans = document.getElementById('filter-océans').checked;
                 const showVilles = document.getElementById('filter-villes').checked;
         
                 markers['capitales'].forEach(marker => {
@@ -219,9 +218,9 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['océans'].forEach(marker => {
-                    if (showOcéans) {
+                    if (showOceans) {
                         marker.addTo(map);
                     } else {
                         map.removeLayer(marker);
@@ -245,7 +244,7 @@
             document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
         });
-        </script>
+        </script>        
         
 </body>
 </html>
