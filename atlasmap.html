@@ -117,7 +117,8 @@
                 'mers': [],
                 'golfs': [],
                 'océans': [],
-                'villes': []
+                'villes': [],
+                'incomplets': []
             };
         
             // Lire les données CSV et ajouter les marqueurs
@@ -138,6 +139,9 @@
         
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
                         const borderColor = description ? 'black' : 'red'; // Couleur de bordure en fonction de la description
+                        if (!description) {
+                            markers['incomplets'].push(marker);
+                        }
         
                         const customIcon = createCustomIcon(color, borderColor);
         
@@ -216,8 +220,10 @@
                         <div class="legend-color" style="background-color: #2b839e;"></div> Golfs
                     </div>
                     <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
                         <div class="legend-color" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
-                    </div>
+                     </div>
+
                 `;
                 return div;
             };
@@ -232,6 +238,8 @@
                 const showGolfs = document.getElementById('filter-golfs').checked;
                 const showOceans = document.getElementById('filter-océans').checked;
                 const showVilles = document.getElementById('filter-villes').checked;
+                const showIncomplets = document.getElementById('filter-incomplets').checked;
+
         
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
@@ -279,7 +287,16 @@
                     } else {
                         map.removeLayer(marker);
                     }
+                });           
+
+                markers['incomplets'].forEach(marker => {
+                    if (showIncomplets) {
+                        marker.addTo(map);
+                    } else {
+                        map.removeLayer(marker);
+                    }
                 });
+
             }
         
             // Ajouter des écouteurs d'événements pour les filtres
@@ -289,6 +306,8 @@
             document.getElementById('filter-golfs').addEventListener('change', updateMarkers);
             document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
+            document.getElementById('filter-incomplets').addEventListener('change', updateMarkers);
+
         });
     </script>
 </body>
