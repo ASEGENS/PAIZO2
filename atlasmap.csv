@@ -29,18 +29,18 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 7058,1838,Boren,Véritas,#FCDC12,véritas.webp,Véritas est une cité de la connaissance et de la sagesse.,Royaume,Humain,Véritas,Tour de la Sagesse,Iomedae
 6358,2271,Uriel,Valenbonne,#FCDC12,valenbonne.webp,Valenbonne est un centre de commerce important.,Duché,Humain,Valenbonne,Marché Central,Erastil
 6358,2531,Lagerstätte,Gueulfort,#FCDC12,gueulfort.webp,"Lagerstatte est un pays créé lors de l'émergence des nains dans Atlas, venus des tréfonds de la terre pour survivre à un cataclysme. Pays minier de par leur expérience raciale, ils sont des alliés ancestraux avec l'Uriel. Dirigé par un roi qui est élu par une compétition d'artisanat tous les 30 ans. Le roi est assisté dans la régence du pays par les Maîtres électeurs, les meilleurs artisans dans chaque domaine. La capitale du pays nommée Karak Ungor est en grande partie souterraine. Les souterrains des nains sont profonds et dangereux, certains de ces tunnels remontent à l'émergence. Une partie des tunnels a été condamnée et mise en quarantaine il y a 150/200 ans, des rumeurs parlent de bruits étranges et de monstres difformes. De par leur proximité et de leur alliance avec l'Uriel, les nains de Lagerstatte possèdent une technologie avancée, qui diverge de leurs voisins en certains points.",Monarchie,"Nains, Uriel",Karak Ungor,"Tunnels souterrains de l'émergence","Aucune mentionnée"
-6258,2531,Emirya,Quadar,#FCDC12,quadar.webp
+6258,2531,Emirya,Quadar,#FCDC12,emirya.webp,,Emirats de Califats Unis,"Humains, Khenra (Hommes-Chacal), Elfes, Minotaures",,,Panthéon Emyrien (Osiriani)
 5783,2141,Ran,AnantaJala,#FCDC12,anantajala.webp,AnantaJala est une ville portuaire prospère.,Royaume,Humain,AnantaJala,Port Royal,Gozreh
 5858,2531,Admetos,Magna,#FCDC12,magna.webp
 5658,2964,Part,Lunos,#FCDC12,lunos.webp
 6158,3137,Zal,Soleil,#FCDC12,soleil.webp
 4808,2964,Iztkhall,Ictlanzuelti,#FCDC12,ictlanzuelti.webp
-7183,3527,Ridai,Meda,#FCDC12,meda.webp
+7183,3527,Ridai,Meda,#FCDC12,ridai.webp
 5458,3657,Empire Yoruba,Kalahari,#FCDC12,kalahari.webp
 4733,1102,Yang Xyu,Nagazaki,#FCDC12,nagazaki.webp
-4683,1535,Kakita,Sakamoto,#FCDC12,sakamoto.webp
+4683,1535,Kakita,Sakamoto,#FCDC12,kakita.webp
 4030,1410,Hosukai,Toshi Hisui,#FCDC12,toshi_hisui.webp
-3508,885,Quingshan,Saki,#FCDC12,saki.webp
+3508,885,Quingshan,Saki,#FCDC12,quingshan.webp,"L'Empire du Quingshan est un régime militaire et hiérarchique dirigé par l'Empereur Vermillon. Les nobles Tiangus et Strixes dominent en politique et dans les arts martiaux. Les humains et les elfes, bien que socialement inférieurs, jouent des rôles essentiels, souvent sous l'influence des familles nobles. La faction du Murim, composée de maîtres en arts martiaux, contrebalance le pouvoir de l'empereur et de l'armée, qui est une des plus puissantes de la région, assurant la sécurité de l'empire. Malgré son agressivité et son antagonisme envers ses voisins et la guilde des aventuriers, le Quingshan est aussi un centre de richesse culturelle et d'érudition, bien que ces aspects soient souvent éclipsés par la priorité donnée à la guerre et à la sécurité nationale.",Empire de droit divin,"Les Tian Giu (tengus), les Strixes et autres races",,La citée Interdite,TBC 
 3658,1492,Batsagia,Cheh,#FCDC12,cheh.webp
 2183,236,Nikova,Kitej,#FCDC12,nikova.webp,"L'Empire du Nikova, surnommée 'l'élégance prise dans les glaces', est un vaste empire situé dans les terres gelées de l'extrême nord. Ce pays est profondément inspiré par la Russie tsariste juste après la première révolution industrielle. À cette époque, Nikova est en pleine transformation, cherchant à combiner ses anciennes traditions aristocratiques avec les innovations industrielles naissantes. La capitale du Nikova, Kitej, est le cœur battant de l'empire. Sous l'influence directe de la Tsarine, Kitej est une métropole éblouissante, où les innovations industrielles et les traditions aristocratiques se rencontrent. La ville est connue pour ses imposants bâtiments, ses théâtres somptueux et ses grandes universités. À l'opposé des grandes villes, les campagnes de Nikova sont sous l'influence des trois cercles druidiques. Ces cercles, anciens et respectés, jouent un rôle crucial dans la vie rurale. Les druides ont une grande influence sur les paysans et sont souvent vus comme des intermédiaires entre les hommes et la nature. Leur pouvoir spirituel est respecté, et ils jouent un rôle clé dans le maintien des traditions.",Empire Tsariste,"Humains, Nains, Goliath, Yétis, Elfes des glaces",,Cercles druidiques,TBC
 1733,1795,Nata,Nata City,#FCDC12,nata_city.webp
@@ -48,7 +48,7 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 1233,2141,Thanal,Adna,#FCDC12,adna.webp
 1808,2618,Taisinia,Fort-des-Francs,#FCDC12,fort_des_francs.webp
 1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,le_toit_du_monde.webp
-783,2661,Drakaran,La pierre du dragon,#FCDC12,la_pierre_du_dragon.webp
+783,2661,Drakaran,La pierre du dragon,#FCDC12,drakaran.webp,Drakaran : La terre de la chevalerie
 6558,1665,Lluire,Bourg Feuillage,#F0F0F2,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
 6283,1362,Monrove,Ernestoval,#F0F0F2,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
 2108,2877,Taisinia,Tanopea,#F0F0F2,tanopea.webp
