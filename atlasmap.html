@@ -118,6 +118,7 @@
                 'golfs': [],
                 'océans': [],
                 'villes': [],
+                'monuments': [],
                 'incomplets': []
             };
         
@@ -180,6 +181,8 @@
                             markers['océans'].push(marker);
                         } else if (color === '#F0F0F2') {
                             markers['villes'].push(marker);
+                        } else if (color === '#3B2077') {
+                            markers['monuments'].push(marker);
                         }
 
                         if (!description) {
@@ -220,6 +223,11 @@
                         <input type="checkbox" class="legend-checkbox" checked id="filter-golfs">
                         <div class="legend-color" style="background-color: #2b839e;"></div> Golfs
                     </div>
+                     <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-monuments">
+                        <div class="legend-color" style="background-color: #2b839e;"></div>Monuments
+                    </div>
+                    
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
                         <div class="legend-color" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
@@ -238,6 +246,7 @@
                 const showGolfs = document.getElementById('filter-golfs').checked;
                 const showOceans = document.getElementById('filter-océans').checked;
                 const showVilles = document.getElementById('filter-villes').checked;
+                const showMonuments = document.getElementById('filter-monuments').checked;
                 const showIncomplets = document.getElementById('filter-incomplets').checked;
         
                 markers['capitales'].forEach(marker => {
@@ -287,7 +296,15 @@
                         map.removeLayer(marker);
                     }
                 });
-                
+
+                markers['monuments'].forEach(marker => {
+                    if (showMonuments) {
+                        marker.addTo(map);
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
+
                 markers['incomplets'].forEach(marker => {
                     if (showIncomplets) {
                         marker.addTo(map);
@@ -304,6 +321,7 @@
             document.getElementById('filter-golfs').addEventListener('change', updateMarkers);
             document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
+            document.getElementById('filter-monuments').addEventListener('change', updateMarkers);
             document.getElementById('filter-incomplets').addEventListener('change', updateMarkers);
         });
     </script>
