@@ -21,6 +21,30 @@
             background: transparent;
             border: none;
         }
+        .legend {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .legend h4 {
+            margin-top: 0;
+        }
+        .legend-label {
+            display: flex;
+            align-items: center;
+        }
+        .legend-checkbox {
+            margin-right: 5px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 5px;
+            border: 2px solid white;
+        }
     </style>
 </head>
 <body>    
@@ -113,7 +137,7 @@
                         const descriptionShort = description.length > 100 ? description.substring(0, 100) + '...' : description;
         
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
-                        const borderColor = description ? 'white' : 'black'; // Définir la couleur de la bordure en fonction de la présence de la description
+                        const borderColor = description ? 'white' : 'black'; // Couleur de bordure en fonction de la description
         
                         const customIcon = createCustomIcon(color, borderColor);
         
@@ -167,12 +191,34 @@
                 const div = L.DomUtil.create('div', 'legend');
                 div.innerHTML = `
                     <h4>Légende</h4>
-                    <label><input type="checkbox" checked id="filter-capitales"> Capitales</label><br>
-                    <label><input type="checkbox" checked id="filter-guildes"> Guildes</label><br>                    
-                    <label><input type="checkbox" checked id="filter-villes"> Villes</label><br>
-                    <label><input type="checkbox" checked id="filter-océans"> Océans</label><br>
-                    <label><input type="checkbox" checked id="filter-mers"> Mers</label><br>
-                    <label><input type="checkbox" checked id="filter-golfs"> Golfs</label><br>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-capitales">
+                        <div class="legend-color" style="background-color: #FCDC12;"></div> Capitales
+                    </div>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-guildes">
+                        <div class="legend-color" style="background-color: #FF0000;"></div> Guildes
+                    </div>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-villes">
+                        <div class="legend
+                        <div class="legend-color" style="background-color: #F0F0F2;"></div> Villes
+                    </div>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-océans">
+                        <div class="legend-color" style="background-color: #0000FF;"></div> Océans
+                    </div>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-mers">
+                        <div class="legend-color" style="background-color: #1c5fa6;"></div> Mers
+                    </div>
+                    <div class="legend-label">
+                        <input type="checkbox" class="legend-checkbox" checked id="filter-golfs">
+                        <div class="legend-color" style="background-color: #2b839e;"></div> Golfs
+                    </div>
+                    <div class="legend-label">
+                        <div class="legend-color" style="background-color: #cccccc; border: 2px solid black;"></div> Incomplet
+                    </div>
                 `;
                 return div;
             };
@@ -182,12 +228,12 @@
             // Fonction pour gérer les filtres
             function updateMarkers() {
                 const showCapitales = document.getElementById('filter-capitales').checked;
-                const showVilles = document.getElementById('filter-villes').checked;
                 const showGuildes = document.getElementById('filter-guildes').checked;
                 const showMers = document.getElementById('filter-mers').checked;
                 const showGolfs = document.getElementById('filter-golfs').checked;
                 const showOceans = document.getElementById('filter-océans').checked;
-
+                const showVilles = document.getElementById('filter-villes').checked;
+        
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
                         marker.addTo(map);
@@ -195,7 +241,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['guildes'].forEach(marker => {
                     if (showGuildes) {
                         marker.addTo(map);
@@ -203,7 +249,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['mers'].forEach(marker => {
                     if (showMers) {
                         marker.addTo(map);
@@ -211,7 +257,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['golfs'].forEach(marker => {
                     if (showGolfs) {
                         marker.addTo(map);
@@ -219,7 +265,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['océans'].forEach(marker => {
                     if (showOceans) {
                         marker.addTo(map);
@@ -227,7 +273,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+        
                 markers['villes'].forEach(marker => {
                     if (showVilles) {
                         marker.addTo(map);
@@ -236,7 +282,7 @@
                     }
                 });
             }
-
+        
             // Ajouter des écouteurs d'événements pour les filtres
             document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
             document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
