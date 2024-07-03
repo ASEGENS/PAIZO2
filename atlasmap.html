@@ -139,9 +139,6 @@
         
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
                         const borderColor = description ? 'black' : 'red'; // Couleur de bordure en fonction de la description
-                        if (!description) {
-                            markers['incomplets'].push(marker);
-                        }
         
                         const customIcon = createCustomIcon(color, borderColor);
         
@@ -184,6 +181,10 @@
                         } else if (color === '#F0F0F2') {
                             markers['villes'].push(marker);
                         }
+
+                        if (!description) {
+                            markers['incomplets'].push(marker);
+                        }
                     });
                 }
             });
@@ -222,8 +223,7 @@
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
                         <div class="legend-color" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
-                     </div>
-
+                    </div>
                 `;
                 return div;
             };
@@ -239,7 +239,6 @@
                 const showOceans = document.getElementById('filter-océans').checked;
                 const showVilles = document.getElementById('filter-villes').checked;
                 const showIncomplets = document.getElementById('filter-incomplets').checked;
-
         
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
@@ -287,8 +286,8 @@
                     } else {
                         map.removeLayer(marker);
                     }
-                });           
-
+                });
+                
                 markers['incomplets'].forEach(marker => {
                     if (showIncomplets) {
                         marker.addTo(map);
@@ -296,7 +295,6 @@
                         map.removeLayer(marker);
                     }
                 });
-
             }
         
             // Ajouter des écouteurs d'événements pour les filtres
@@ -307,8 +305,8 @@
             document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
             document.getElementById('filter-incomplets').addEventListener('change', updateMarkers);
-
         });
     </script>
 </body>
 </html>
+
