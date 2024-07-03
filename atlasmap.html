@@ -92,7 +92,9 @@
                 'guildes': [],
                 'mers': [],
                 'golfs': [],
+                'océans': [],
                 'villes': []
+
             };
         
             // Lire les données CSV et ajouter les marqueurs
@@ -149,7 +151,9 @@
                             markers['mers'].push(marker);
                         } else if (color === '#2b839e') {
                             markers['golfs'].push(marker);
-                        } else {
+                        } else if (color === '#2b839e') {
+                            markers['océans'].push(marker);
+                        } else if (color === '#2b839e') {
                             markers['villes'].push(marker);
                         }
                     });
@@ -167,6 +171,7 @@
                     <label><input type="checkbox" checked id="filter-guildes"> Guildes</label><br>
                     <label><input type="checkbox" checked id="filter-mers"> Mers</label><br>
                     <label><input type="checkbox" checked id="filter-golfs"> Golfs</label><br>
+                    <label><input type="checkbox" checked id="filter-océans"> Océans</label><br>
                     <label><input type="checkbox" checked id="filter-villes"> Villes</label><br>
                 `;
                 return div;
@@ -180,6 +185,7 @@
                 const showGuildes = document.getElementById('filter-guildes').checked;
                 const showMers = document.getElementById('filter-mers').checked;
                 const showGolfs = document.getElementById('filter-golfs').checked;
+                const showOcéans = document.getElementById('filter-Océans').checked;
                 const showVilles = document.getElementById('filter-villes').checked;
         
                 markers['capitales'].forEach(marker => {
@@ -213,6 +219,14 @@
                         map.removeLayer(marker);
                     }
                 });
+
+                markers['océans'].forEach(marker => {
+                    if (showOcéans) {
+                        marker.addTo(map);
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
         
                 markers['villes'].forEach(marker => {
                     if (showVilles) {
@@ -228,6 +242,7 @@
             document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
             document.getElementById('filter-mers').addEventListener('change', updateMarkers);
             document.getElementById('filter-golfs').addEventListener('change', updateMarkers);
+            document.getElementById('filter-océans').addEventListener('change', updateMarkers);
             document.getElementById('filter-villes').addEventListener('change', updateMarkers);
         });
         </script>
