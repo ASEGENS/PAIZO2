@@ -45,6 +45,37 @@
             margin-right: 5px;
             border: 2px solid white;
         }
+        .shape-circle {
+            border-radius: 50%;
+        }
+        .shape-square {
+            border-radius: 0;
+        }
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 24px solid;
+            background: transparent;
+        }
+        .shape-star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .shape-diamond {
+            width: 16px;
+            height: 16px;
+            transform: rotate(45deg);
+        }
+        .shape-pentagon {
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0 38%);
+        }
+        .shape-hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+        .shape-octagon {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
     </style>
 </head>
 <body>    
@@ -102,10 +133,10 @@
             map.setMaxBounds(bounds);
         
             // Fonction pour créer une icône personnalisée
-            function createCustomIcon(color, borderColor = 'white') {
+            function createCustomIcon(color, shape, borderColor = 'white') {
                 return L.divIcon({
-                    className: 'custom-div-icon',
-                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid ${borderColor};"></div>`,
+                    className: `custom-div-icon shape-${shape}`,
+                    html: `<div style="background-color: ${color}; border: 2px solid ${borderColor};"></div>`,
                     iconSize: [24, 24],
                     iconAnchor: [12, 12]
                 });
@@ -140,12 +171,36 @@
         
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
                         const borderColor = description ? 'black' : 'red'; // Couleur de bordure en fonction de la description
+                        let shape;
         
-                        const customIcon = createCustomIcon(color, borderColor);
+                        if (color === '#FCDC12') {
+                            shape = 'circle';
+                            markers['capitales'].push(marker);
+                        } else if (color === '#090E19') {
+                            shape = 'square';
+                            markers['guildes'].push(marker);
+                        } else if (color === '#1c5fa6') {
+                            shape = 'diamond';
+                            markers['mers'].push(marker);
+                        } else if (color === '#2b839e') {
+                            shape = 'pentagon';
+                            markers['golfs'].push(marker);
+                        } else if (color === '#0000FF') {
+                            shape = 'hexagon';
+                            markers['océans'].push(marker);
+                        } else if (color === '#F0F0F2') {
+                            shape = 'triangle';
+                            markers['villes'].push(marker);
+                        } else if (color === '#3B2077') {
+                            shape = 'star';
+                            markers['monuments'].push(marker);
+                        }
+
+                        const customIcon = createCustomIcon(color, shape, borderColor);
         
                         const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .bindPopup(`
-                                <b>${title}</b><br>${Pays}<br><br>${Politique}<br><br>${Population}<br><br>${descriptionShort}<br>
+                                                               <b>${title}</b><br>${Pays}<br><br>${Politique}<br><br>${Population}<br><br>${descriptionShort}<br>
                                 <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal" data-index="${index}">
                                     Plus d'infos
                                 </button>
@@ -165,25 +220,9 @@
                                 ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
                             `;
                         });
-        
+
                         // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
                         marker.addTo(map);
-        
-                        if (color === '#FCDC12') {
-                            markers['capitales'].push(marker);
-                        } else if (color === '#090E19') {
-                            markers['guildes'].push(marker);
-                        } else if (color === '#1c5fa6') {
-                            markers['mers'].push(marker);
-                        } else if (color === '#2b839e') {
-                            markers['golfs'].push(marker);
-                        } else if (color === '#0000FF') {
-                            markers['océans'].push(marker);
-                        } else if (color === '#F0F0F2') {
-                            markers['villes'].push(marker);
-                        } else if (color === '#3B2077') {
-                            markers['monuments'].push(marker);
-                        }
 
                         if (!description) {
                             markers['incomplets'].push(marker);
@@ -201,36 +240,35 @@
                     <h4>Légende</h4>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-capitales">
-                        <div class="legend-color" style="background-color: #FCDC12;"></div> Capitales
+                        <div class="legend-color shape-circle" style="background-color: #FCDC12;"></div> Capitales
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-guildes">
-                        <div class="legend-color" style="background-color: #090E19;"></div> Guildes
+                        <div class="legend-color shape-square" style="background-color: #090E19;"></div> Guildes
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-villes">
-                        <div class="legend-color" style="background-color: #F0F0F2;"></div> Villes
+                        <div class="legend-color shape-triangle" style="background-color: #F0F0F2;"></div> Villes
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-océans">
-                        <div class="legend-color" style="background-color: #0000FF;"></div> Océans
+                        <div class="legend-color shape-hexagon" style="background-color: #0000FF;"></div> Océans
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-mers">
-                        <div class="legend-color" style="background-color: #1c5fa6;"></div> Mers
+                        <div class="legend-color shape-diamond" style="background-color: #1c5fa6;"></div> Mers
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-golfs">
-                        <div class="legend-color" style="background-color: #2b839e;"></div> Golfs
+                        <div class="legend-color shape-pentagon" style="background-color: #2b839e;"></div> Golfs
                     </div>
-                     <div class="legend-label">
+                    <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-monuments">
-                        <div class="legend-color" style="background-color: #3B2077;"></div>Monuments
+                        <div class="legend-color shape-star" style="background-color: #3B2077;"></div> Monuments
                     </div>
-                    
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
-                        <div class="legend-color" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
+                        <div class="legend-color shape-octagon" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
                     </div>
                 `;
                 return div;
