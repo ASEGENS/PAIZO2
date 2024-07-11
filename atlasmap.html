@@ -104,7 +104,7 @@
                         let shapeClass = 'shape-circle';
     
                         if (color === '#FCDC12') {
-                            shapeClass = 'shape-circle';
+                            shapeClass = 'shape-star';
                         } else if (color === '#090E19') {
                             shapeClass = 'shape-square';
                         } else if (color === '#1c5fa6') {
@@ -116,7 +116,7 @@
                         } else if (color === '#F0F0F2') {
                             shapeClass = 'shape-triangle';
                         } else if (color === '#3B2077') {
-                            shapeClass = 'shape-star';
+                            shapeClass = 'shape-square';
                         }
     
                         const customIcon = createCustomIcon(color, shapeClass, borderColor);
@@ -136,7 +136,7 @@
                                 ${row.image ? `<img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">` : ''}
                                 ${row.Pays ? `<p><strong>Pays:</strong> ${row.Pays}</p>` : ''}
                                 ${row.description ? `<p><strong>Description:</strong> ${row.description}</p>` : ''}
-                                ${row.Politique ? `<p>                                <strong>Politique:</strong> ${row.Politique}</p>` : ''}
+                                ${row.Politique ? `<p><strong>Politique:</strong> ${row.Politique}</p>` : ''}
                                 ${row.Population ? `<p><strong>Population:</strong> ${row.Population}</p>` : ''}
                                 ${row.capital ? `<p><strong>Capital:</strong> ${row.capital}</p>` : ''}
                                 ${row.Monument ? `<p><strong>Monument:</strong> ${row.Monument}</p>` : ''}
@@ -179,7 +179,7 @@
                     <h4>Légende</h4>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-capitales">
-                        <div class="legend-color shape-circle" style="background-color: #FCDC12;"></div> Capitales
+                        <div class="legend-color shape-star" style="background-color: #FCDC12;"></div> Capitales
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-guildes">
@@ -187,6 +187,7 @@
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-villes">
+                        <div class="legend-color shape-triangle" style="background-color: #F
                         <div class="legend-color shape-triangle" style="background-color: #F0F0F2;"></div> Villes
                     </div>
                     <div class="legend-label">
@@ -203,7 +204,7 @@
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-monuments">
-                        <div class="legend-color shape-star" style="background-color: #3B2077;"></div> Monuments
+                        <div class="legend-color shape-square" style="background-color: #3B2077;"></div> Monuments
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
