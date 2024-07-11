@@ -41,7 +41,6 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            border-radius: 50%;
             margin-right: 5px;
             border: 2px solid white;
         }
@@ -54,24 +53,21 @@
         .shape-triangle {
             width: 0;
             height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 24px solid;
-            background: transparent;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 16px solid;
         }
         .shape-star {
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
         .shape-diamond {
-            width: 16px;
-            height: 16px;
-            transform: rotate(45deg);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
         .shape-pentagon {
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0 38%);
+            clip-path: polygon(50% 0%, 95% 35%, 79% 91%, 21% 91%, 5% 35%);
         }
         .shape-hexagon {
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
         }
         .shape-octagon {
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
@@ -105,7 +101,6 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialiser la carte
@@ -137,7 +132,7 @@
             function createCustomIcon(color, shapeClass = 'shape-circle', borderColor = 'white') {
                 return L.divIcon({
                     className: `custom-div-icon ${shapeClass}`,
-                    html: `<div style="background-color: ${color}; width: 24px; height: 24px; border: 2px solid ${borderColor};"></div>`,
+                    html: `<div class="${shapeClass}" style="background-color: ${color}; width: 24px; height: 24px; border: 2px solid ${borderColor};"></div>`,
                     iconSize: [24, 24],
                     iconAnchor: [12, 12]
                 });
@@ -207,7 +202,7 @@
                                 ${row.image ? `<img src="img/MAP/${row.image}" alt="${row.nom}" class="img-fluid mb-3">` : ''}
                                 ${row.Pays ? `<p><strong>Pays:</strong> ${row.Pays}</p>` : ''}
                                 ${row.description ? `<p><strong>Description:</strong> ${row.description}</p>` : ''}
-                                ${row.Politique ? `<p><strong>Politique:</strong> ${row.Politique}</p>` : ''}
+                                ${row.Politique ? `<p>                                <strong>Politique:</strong> ${row.Politique}</p>` : ''}
                                 ${row.Population ? `<p><strong>Population:</strong> ${row.Population}</p>` : ''}
                                 ${row.capital ? `<p><strong>Capital:</strong> ${row.capital}</p>` : ''}
                                 ${row.Monument ? `<p><strong>Monument:</strong> ${row.Monument}</p>` : ''}
@@ -278,14 +273,14 @@
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-incomplets">
-                        <div class="legend-color" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
+                        <div class="legend-color shape-circle" style="background-color: #cccccc; border: 2px solid red;"></div> Incomplet
                     </div>
                 `;
                 return div;
             };
-
+    
             legend.addTo(map);
-
+    
             // Fonction pour gérer les filtres
             function updateMarkers() {
                 const showCapitales = document.getElementById('filter-capitales').checked;
@@ -296,7 +291,7 @@
                 const showVilles = document.getElementById('filter-villes').checked;
                 const showMonuments = document.getElementById('filter-monuments').checked;
                 const showIncomplets = document.getElementById('filter-incomplets').checked;
-
+    
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
                         marker.addTo(map);
@@ -304,7 +299,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['guildes'].forEach(marker => {
                     if (showGuildes) {
                         marker.addTo(map);
@@ -312,7 +307,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['mers'].forEach(marker => {
                     if (showMers) {
                         marker.addTo(map);
@@ -320,7 +315,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['golfs'].forEach(marker => {
                     if (showGolfs) {
                         marker.addTo(map);
@@ -328,7 +323,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['océans'].forEach(marker => {
                     if (showOceans) {
                         marker.addTo(map);
@@ -336,7 +331,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['villes'].forEach(marker => {
                     if (showVilles) {
                         marker.addTo(map);
@@ -344,7 +339,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['monuments'].forEach(marker => {
                     if (showMonuments) {
                         marker.addTo(map);
@@ -352,7 +347,7 @@
                         map.removeLayer(marker);
                     }
                 });
-
+    
                 markers['incomplets'].forEach(marker => {
                     if (showIncomplets) {
                         marker.addTo(map);
@@ -361,7 +356,7 @@
                     }
                 });
             }
-
+    
             // Ajouter des écouteurs d'événements pour les filtres
             document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
             document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
@@ -372,12 +367,7 @@
             document.getElementById('filter-monuments').addEventListener('change', updateMarkers);
             document.getElementById('filter-incomplets').addEventListener('change', updateMarkers);
         });
-</script>
-
-    
-
-
-
+    </script>
 </body>
 </html>
 
