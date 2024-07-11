@@ -270,28 +270,47 @@ body {
     margin-bottom: 5px; /* Espacement sous le header */
 }
 
-/* Legend Styles */
+/* Map and Legend Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100vh; /* Hauteur de la carte */
+    width: 100%; /* Largeur de la carte */
+}
+
+.custom-div-icon {
+    background: transparent;
+    border: none;
+}
+
 .legend {
     background: white;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
 .legend h4 {
     margin-top: 0;
 }
+
 .legend-label {
     display: flex;
     align-items: center;
 }
+
 .legend-checkbox {
     margin-right: 5px;
 }
+
 .legend-color {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border-radius: 50%;
     margin-right: 5px;
     border: 2px solid white;
 }
@@ -299,9 +318,11 @@ body {
 .shape-circle {
     border-radius: 50%;
 }
+
 .shape-square {
     border-radius: 0;
 }
+
 .shape-triangle {
     width: 0;
     height: 0;
@@ -309,18 +330,23 @@ body {
     border-right: 8px solid transparent;
     border-bottom: 16px solid;
 }
+
 .shape-star {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
+
 .shape-diamond {
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
+
 .shape-pentagon {
     clip-path: polygon(50% 0%, 95% 35%, 79% 91%, 21% 91%, 5% 35%);
 }
+
 .shape-hexagon {
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }
+
 .shape-octagon {
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
