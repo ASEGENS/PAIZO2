@@ -43,25 +43,25 @@
                 minZoom: -2, // Niveau de zoom minimum ajusté
                 maxZoom: 2,  // Niveau de zoom maximum
             });
-    
+
             // Définir les dimensions de l'image
             const w = 7516, h = 3848; // Largeur et hauteur de l'image
             const imageUrl = 'img/MAP/Vienia_Atlas.png'; // Chemin vers l'image
-    
+
             // Définir les coins de l'image dans le système de coordonnées
             const southWest = map.unproject([0, h], map.getMaxZoom() - 1);
             const northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
             const bounds = new L.LatLngBounds(southWest, northEast);
-    
+
             // Ajouter l'image à la carte
             L.imageOverlay(imageUrl, bounds).addTo(map);
-    
+
             // Adapter la vue à l'image
             map.fitBounds(bounds);
-    
+
             // Définir les limites maximales de dézoom
             map.setMaxBounds(bounds);
-    
+
             // Fonction pour créer une icône personnalisée
             function createCustomIcon(color, shapeClass = 'shape-circle', borderColor = 'white') {
                 return L.divIcon({
@@ -71,7 +71,7 @@
                     iconAnchor: [12, 12]
                 });
             }
-    
+
             const markers = {
                 'capitales': [],
                 'guildes': [],
@@ -82,7 +82,7 @@
                 'monuments': [],
                 'incomplets': []
             };
-    
+
             // Lire les données CSV et ajouter les marqueurs
             Papa.parse('atlasmap.csv', {
                 download: true,
@@ -98,29 +98,29 @@
                         const Politique = row.Politique || "";
                         const Population = row.Population || "";
                         const descriptionShort = description.length > 100 ? description.substring(0, 100) + '...' : description;
-    
+
                         const color = row.Couleur || '#3388ff'; // Utiliser une couleur par défaut si non spécifié
                         const borderColor = description ? 'black' : 'red'; // Couleur de bordure en fonction de la description
                         let shapeClass = 'shape-circle';
-    
-                        if (color === '#FCDC12') {
+
+                        if (row.Catégorie === 'Capitales') {
                             shapeClass = 'shape-star';
-                        } else if (color === '#090E19') {
+                        } else if (row.Catégorie === 'Guildes') {
                             shapeClass = 'shape-square';
-                        } else if (color === '#1c5fa6') {
+                        } else if (row.Catégorie === 'Mers') {
                             shapeClass = 'shape-diamond';
-                        } else if (color === '#2b839e') {
+                        } else if (row.Catégorie === 'Golfs') {
                             shapeClass = 'shape-pentagon';
-                        } else if (color === '#0000FF') {
+                        } else if (row.Catégorie === 'Océans') {
                             shapeClass = 'shape-hexagon';
-                        } else if (color === '#F0F0F2') {
-                            shapeClass = 'shape-hexagon';
-                        } else if (color === '#3B2077') {
+                        } else if (row.Catégorie === 'Villes') {
+                            shapeClass = 'shape-triangle';
+                        } else if (row.Catégorie === 'Monuments') {
                             shapeClass = 'shape-square';
                         }
-    
+
                         const customIcon = createCustomIcon(color, shapeClass, borderColor);
-    
+
                         const marker = L.marker(map.unproject([lat, lng], map.getMaxZoom() - 1), { icon: customIcon })
                             .bindPopup(`
                                 <b>${title}</b><br>${Pays}<br><br>${Politique}<br><br>${Population}<br><br>${descriptionShort}<br>
@@ -128,7 +128,7 @@
                                     Plus d'infos
                                 </button>
                             `);
-    
+
                         marker.on('click', function() {
                             const modalContent = document.getElementById('modalContent');
                             modalContent.innerHTML = `
@@ -143,36 +143,36 @@
                                 ${row.religion ? `<p><strong>Religion:</strong> ${row.religion}</p>` : ''}
                             `;
                         });
-    
+
                         // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
                         marker.addTo(map);
-    
-                        if (color === '#FCDC12') {
+
+                        if (row.Catégorie === 'Capitales') {
                             markers['capitales'].push(marker);
-                        } else if (color === '#090E19') {
+                        } else if (row.Catégorie === 'Guildes') {
                             markers['guildes'].push(marker);
-                        } else if (color === '#1c5fa6') {
+                        } else if (row.Catégorie === 'Mers') {
                             markers['mers'].push(marker);
-                        } else if (color === '#2b839e') {
+                        } else if (row.Catégorie === 'Golfs') {
                             markers['golfs'].push(marker);
-                        } else if (color === '#0000FF') {
+                        } else if (row.Catégorie === 'Océans') {
                             markers['océans'].push(marker);
-                        } else if (color === '#F0F0F2') {
+                        } else if (row.Catégorie === 'Villes') {
                             markers['villes'].push(marker);
-                        } else if (color === '#3B2077') {
+                        } else if (row.Catégorie === 'Monuments') {
                             markers['monuments'].push(marker);
                         }
-    
+
                         if (!description) {
                             markers['incomplets'].push(marker);
                         }
                     });
                 }
             });
-    
+
             // Ajouter une légende
             const legend = L.control({ position: 'topleft' });
-    
+
             legend.onAdd = function(map) {
                 const div = L.DomUtil.create('div', 'legend');
                 div.innerHTML = `
@@ -184,10 +184,10 @@
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-guildes">
                         <div class="legend-color shape-square" style="background-color: #090E19; border: 2px solid black;"></div> Guildes
-                    </div
+                    </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-villes">
-                        <div class="legend-color" style="background-color: #F0F0F2; border: 2px solid black;"></div> Villes
+                        <div class="legend-color shape-triangle" style="background-color: #F0F0F2; border: 2px solid black;"></div> Villes
                     </div>
                     <div class="legend-label">
                         <input type="checkbox" class="legend-checkbox" checked id="filter-océans">
@@ -212,9 +212,9 @@
                 `;
                 return div;
             };
-    
+
             legend.addTo(map);
-    
+
             // Fonction pour gérer les filtres
             function updateMarkers() {
                 const showCapitales = document.getElementById('filter-capitales').checked;
@@ -225,7 +225,7 @@
                 const showVilles = document.getElementById('filter-villes').checked;
                 const showMonuments = document.getElementById('filter-monuments').checked;
                 const showIncomplets = document.getElementById('filter-incomplets').checked;
-    
+
                 markers['capitales'].forEach(marker => {
                     if (showCapitales) {
                         marker.addTo(map);
@@ -233,7 +233,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['guildes'].forEach(marker => {
                     if (showGuildes) {
                         marker.addTo(map);
@@ -241,7 +241,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['mers'].forEach(marker => {
                     if (showMers) {
                         marker.addTo(map);
@@ -249,7 +249,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['golfs'].forEach(marker => {
                     if (showGolfs) {
                         marker.addTo(map);
@@ -257,7 +257,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['océans'].forEach(marker => {
                     if (showOceans) {
                         marker.addTo(map);
@@ -265,7 +265,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['villes'].forEach(marker => {
                     if (showVilles) {
                         marker.addTo(map);
@@ -273,7 +273,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['monuments'].forEach(marker => {
                     if (showMonuments) {
                         marker.addTo(map);
@@ -281,7 +281,7 @@
                         map.removeLayer(marker);
                     }
                 });
-    
+
                 markers['incomplets'].forEach(marker => {
                     if (showIncomplets) {
                         marker.addTo(map);
@@ -290,7 +290,7 @@
                     }
                 });
             }
-    
+
             // Ajouter des écouteurs d'événements pour les filtres
             document.getElementById('filter-capitales').addEventListener('change', updateMarkers);
             document.getElementById('filter-guildes').addEventListener('change', updateMarkers);
