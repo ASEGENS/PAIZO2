@@ -271,6 +271,11 @@ body {
 }
 
 /* Map and Legend Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 #map {
     height: 100vh; /* Hauteur de la carte */
     width: 100%; /* Largeur de la carte */
