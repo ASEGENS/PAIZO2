@@ -38,7 +38,6 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Fonction pour charger le contenu HTML à partir de fichiers externes
             function loadHTML(elementId, url) {
                 return fetch(url)
                     .then(response => response.text())
@@ -55,9 +54,7 @@
                 initializeAccordion();
             });
 
-            // Fonction pour initialiser l'accordéon en chargeant et en analysant les fichiers CSV
             function initializeAccordion() {
-                // Définition des fichiers CSV à charger
                 const csvFiles = {
                     'Concept': 'atlasConcepts.csv',
                     'Géographie': 'atlasGeographie.csv',
@@ -66,7 +63,6 @@
                     'Religion': 'atlasReligions.csv'
                 };
 
-                // Fonction pour analyser un fichier CSV donné
                 function parseCSV(file, callback) {
                     Papa.parse(file, {
                         download: true,
@@ -77,15 +73,13 @@
                     });
                 }
 
-                // Fonction pour créer un sous-accordéon avec les données analysées
                 function createSubAccordion(data, parentId) {
                     const subAccordion = document.createElement('div');
                     subAccordion.className = 'accordion';
                     subAccordion.id = `subAccordion${parentId}`;
 
-                    // Parcourir chaque ligne de données du CSV
                     data.forEach((row, index) => {
-                        const isFirst = index === 0;  // Vérifier si c'est le premier élément
+                        const isFirst = index === 0;
                         const accordionItem = document.createElement('div');
                         accordionItem.className = 'accordion-item';
                         accordionItem.innerHTML = `
@@ -106,27 +100,23 @@
                     return subAccordion;
                 }
 
-                // Fonction pour générer le contenu HTML basé sur les données d'une ligne du CSV
                 function generateContent(row) {
                     let content = '';
-                    // Parcourir chaque clé-valeur de la ligne
                     for (const [key, value] of Object.entries(row)) {
-                        if (key !== 'nom' && key !== 'title' && key !== 'img') { // Ignorer les clés 'nom', 'title' et 'img'
-                            if (isValidURL(value)) { // Vérifier si la valeur est une URL
+                        if (key !== 'nom' && key !== 'title' && key !== 'img') {
+                            if (isValidURL(value)) {
                                 content += `<p><strong>${key}:</strong> <a href="${value}" target="_blank">${value}</a></p>`;
                             } else {
                                 content += `<p><strong>${key}:</strong> ${value}</p>`;
                             }
                         }
                     }
-                    // Ajouter l'image si elle existe
                     if (row.img) {
                         content += `<img src="img/MAP/${row.img}" alt="${row.nom || row.title}" class="img-fluid mb-3">`;
                     }
                     return content;
                 }
 
-                // Fonction pour vérifier si une chaîne est une URL valide
                 function isValidURL(string) {
                     try {
                         new URL(string);
@@ -138,13 +128,12 @@
 
                 const mainAccordion = document.getElementById('mainAccordion');
 
-                // Parcourir chaque section définie dans csvFiles et analyser le fichier correspondant
                 for (const [section, file] of Object.entries(csvFiles)) {
                     parseCSV(file, function(data) {
-                        const isFirst = mainAccordion.children.length === 0;  // Vérifier si c'est le premier élément
+                        const isFirst = mainAccordion.children.length === 0;
                         const accordionItem = document.createElement('div');
                         accordionItem.className = 'accordion-item';
-                        const parentId = section.replace(/\s+/g, '');  // Supprimer les espaces dans l'ID
+                        const parentId = section.replace(/\s+/g, '');
                         accordionItem.innerHTML = `
                             <h2 class="accordion-header" id="heading${parentId}">
                                 <button class="accordion-button ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${parentId}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="collapse${parentId}">
@@ -158,7 +147,6 @@
                             </div>
                         `;
 
-                        // Créer le sous-accordéon avec les données du CSV
                         const subAccordion = createSubAccordion(data, parentId);
                         accordionItem.querySelector('.accordion-body').appendChild(subAccordion);
                         mainAccordion.appendChild(accordionItem);
