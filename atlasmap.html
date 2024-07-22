@@ -112,7 +112,7 @@
                             const pageButton = document.getElementById('pageButton');
                             pageButton.innerHTML = `Page de ${title}`;
                             pageButton.onclick = function() {
-                                window.open(`/mapAtlas/${title}.html`, '_blank');
+                                window.open(`/mapAtlas/atlasLieu.html?pays=${Pays}`, '_blank');
                             };
                             modalContent.innerHTML = `
                                 <h5>${row.nom}</h5>
@@ -127,7 +127,7 @@
                             `;
                             const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
                             infoModal.show();
-                        });
+                        });                        
 
                         // Ajouter le marqueur à la carte et à la liste des marqueurs par catégorie
                         marker.addTo(map);
