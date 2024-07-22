@@ -308,3 +308,36 @@ html, body {
     margin-right: 5px;
     border: 2px solid white;
 }
+
+/* Timeline Styles */
+.timeline-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+}
+
+#timeline {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+}
+
+.timeline-event {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.timeline-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    white-space: nowrap;
+}
