@@ -19,6 +19,16 @@
         </div>
     </section>
 
+    <!-- Global Timeline Section -->
+    <section class="timeline-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Événements Majeurs</h2>
+            <div id="globalTimeline" class="timeline">
+                <!-- Timeline items will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Accordion Section -->
     <section class="accordion-section py-5" id="accordion-section">
         <div class="container">
@@ -52,6 +62,7 @@
                 loadHTML('footer-container', 'footer.html')
             ]).then(() => {
                 initializeAccordion();
+                loadGlobalTimeline();
             });
 
             function initializeAccordion() {
@@ -152,6 +163,26 @@
                         mainAccordion.appendChild(accordionItem);
                     });
                 }
+            }
+
+            function loadGlobalTimeline() {
+                Papa.parse('evenement.csv', {
+                    download: true,
+                    header: true,
+                    complete: function(results) {
+                        const data = results.data.filter(event => event.majeur === 'oui');
+                        const timeline = document.getElementById('globalTimeline');
+                        data.forEach(event => {
+                            const timelineItem = document.createElement('div');
+                            timelineItem.className = 'timeline-item';
+                            timelineItem.innerHTML = `
+                                <h5>${event.date} - ${event.nom}</h5>
+                                <p>${event.description}</p>
+                            `;
+                            timeline.appendChild(timelineItem);
+                        });
+                    }
+                });
             }
         });
     </script>
