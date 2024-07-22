@@ -287,44 +287,45 @@
                 checkbox.addEventListener('change', updateMarkers);
             });
 
-            // Charger les données de la frise chronologique
-            Papa.parse('atlasChrono.csv', {
-                download: true,
-                header: true,
-                complete: function(results) {
-                    const data = results.data;
-                    const timelineContainer = document.getElementById('timeline');
+           // Charger les données de la frise chronologique
+Papa.parse('atlasChrono.csv', {
+    download: true,
+    header: true,
+    complete: function(results) {
+        const data = results.data;
+        const timelineContainer = document.getElementById('timeline');
 
-                    // Créer les éléments de la frise chronologique
-                    data.forEach(event => {
-                        const eventElement = document.createElement('div');
-                        eventElement.className = 'timeline-event';
-                        eventElement.dataset.date = event.Date;
-                        eventElement.innerHTML = `<strong>${event['Nom de l\'évenement']}</strong><br>${event.Zone}<br>${event.Date}`;
-                        
-                        // Ajouter un événement au survol
-                        eventElement.addEventListener('mouseover', () => {
-                            const tooltip = document.createElement('div');
-                            tooltip.className = 'timeline-tooltip';
-                            tooltip.innerHTML = `
-                                <strong>${event['Nom de l\'évenement']}</strong><br>
-                                ${event.Date}<br>
-                                ${event.Zone}<br>
-                                ${event.Détail}
-                            `;
-                            document.body.appendChild(tooltip);
-                            tooltip.style.left = `${eventElement.getBoundingClientRect().left}px`;
-                            tooltip.style.top = `${eventElement.getBoundingClientRect().top - tooltip.offsetHeight}px`;
+        // Créer les éléments de la frise chronologique
+        data.forEach(event => {
+            const eventElement = document.createElement('div');
+            eventElement.className = 'timeline-event';
+            eventElement.dataset.date = event.Date;
+            eventElement.innerHTML = `<strong>${event['Nom de l\'événement']}</strong><br>${event.Zone}<br>${event.Date}`;
+            
+            // Ajouter un événement au survol
+            eventElement.addEventListener('mouseover', () => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'timeline-tooltip';
+                tooltip.innerHTML = `
+                    <strong>${event['Nom de l\'événement']}</strong><br>
+                    ${event.Date}<br>
+                    ${event.Zone}<br>
+                    ${event.Détail}
+                `;
+                document.body.appendChild(tooltip);
+                tooltip.style.left = `${eventElement.getBoundingClientRect().left}px`;
+                tooltip.style.top = `${eventElement.getBoundingClientRect().top - tooltip.offsetHeight}px`;
 
-                            eventElement.addEventListener('mouseout', () => {
-                                document.body.removeChild(tooltip);
-                            });
-                        });
-
-                        timelineContainer.appendChild(eventElement);
-                    });
-                }
+                eventElement.addEventListener('mouseout', () => {
+                    document.body.removeChild(tooltip);
+                });
             });
+
+            timelineContainer.appendChild(eventElement);
+        });
+    }
+});
+
         });
     </script>
 </body>
