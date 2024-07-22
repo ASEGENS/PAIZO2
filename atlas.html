@@ -67,11 +67,11 @@
 
             function initializeAccordion() {
                 const csvFiles = {
-                    'Concept': 'atlasConcepts.csv',
-                    'Géographie': 'atlasGeographie.csv',
-                    'Guilde': 'atlasGuildes.csv',
-                    'Histoire': 'atlasHistoire.csv',
-                    'Religion': 'atlasReligions.csv'
+                    'Concept': 'atlas/atlasConcepts.csv',
+                    'Géographie': 'atlas/atlasGeographie.csv',
+                    'Guilde': 'atlas/atlasGuildes.csv',
+                    'Histoire': 'atlas/atlasHistoire.csv',
+                    'Religion': 'atlas/atlasReligions.csv'
                 };
 
                 function parseCSV(file, callback) {
@@ -166,7 +166,7 @@
             }
 
             function loadGlobalTimeline() {
-                Papa.parse('evenement.csv', {
+                Papa.parse('atlas/evenement.csv', {
                     download: true,
                     header: true,
                     complete: function(results) {
