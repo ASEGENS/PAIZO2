@@ -18,10 +18,12 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 3340,1350,,Golf du Ponant,#2b839e,golf.webp
 4840,1340,,Golf du Levant,#2b839e,golf.webp
 7180,2573,,Golf des Fermoires,#2b839e,golf.webp
+
 6483,1535,Lluire,Guilde de Sancrevin,#090E19,fortsancrevin.webp,Lluire est un pays historique connue pour sa guilde de Sancrevin.,République,Humain,Lluire,Sancrevin,Gorum
 7033,3267,Melius,Guilde de Orlytlar,#090E19,melius.webp,"Orlytlar 'Le Joyaux Noir' est la capital du Melius, terre de naissance de tous les Drow ou elfes noirs depuis des siècles et l'une des trois chaines. Qu'est que les trois vous demanderez il s'agit des trois pays pour leurs grands commerces d'esclaves Le Part, Le Melius et La Ridai trois grands états alliés pratiquant l'esclavage. La région est dites inhospitalière et les seuls habitant de L'empire appart les Drows et les esclaves sont les aventuriers, La capitale est Orlytlar dirigé par l'impératrice et les autres villes majeures par les différentes reine mère", Un Empire régies par une Impératrice et ces reines matriarches,Melien,,, "Les reines de nuits, Les Archidiables et Certains Seigneur Démon "
 3858,712,Hiroyuki,Guilde de Hiroyuki,#090E19,hiroyuki.webp,
-1483,1881,Nata,Goldencross,#090E19,goldencross.webp
+1483,1881,Nata,Guilde de Goldencross,#090E19,goldencross.webp
+
 5383,496,Orania,Midgar,#FCDC12,midgar.webp,"L'Orania est un pays situé au nord d'Atlas, son peuple est majoritairement constitué de Vikings, une petite population d'Inuït est présente à l'ouest (Ikaluyiens) et ils existent des nains dans les montagnes qui n'ont pas été aperçu depuis plus d'un siècle",Monarchie,"Humain, créatures-garou, Dverg",Midgar,Jodulstein (temple des Valkyries),"Gorum, Torag, Erastil, Desna"
 6308,1838,Lluire,Port-Alis,#FCDC12,.webp,Port-Alis est un port marchand florissant.,République,Humain,Port-Alis,Statue de la Liberté,Abadar
 5883,1448,Monrove,Miklagil,#FCDC12,.webp,Miklagil est une cité ancienne renommée pour ses murailles impressionnantes.,Empire,"Humain, Elfe",Miklagil,Muraille de Fer,Desna
@@ -48,10 +50,12 @@ lat,lng,Pays,nom,Couleur,image,description,Politique,Population,capital,Monument
 1808,2618,Taisinia,Fort-des-Francs,#FCDC12,fort_des_francs.webp
 1308,2618,Le vaste cimetière,Le toit du monde,#FCDC12,le_toit_du_monde.webp
 783,2661,Drakaran,La pierre du dragon,#FCDC12,drakaran.webp,Drakaran : La terre de la chevalerie
+6975,2324,Lealand,Lealand : Demeure des Highlanders,#FCDC12,lealand.webp,"Libéré, ré-annexé puis de nouveau libéré du Boren, le Lealand est surtout connu pour sa culture guerrière et pour ses légendaires combattants, les highlanders : ces grands guerriers armés d’immenses épées, causant des ravages dans les rangs de leurs ennemis. Cet ordre est maintenant au service du roi guerrier Walace Mc Leod.",Royauté et conseil,
+
+
 6558,1665,Lluire,Bourg Feuillage,#F0F0F2,bourg_feuillage.webp,Bourg Feuillage est un petit village entouré de forêts. Son économie repose principalement sur l'exploitation du bois.,République,Humain,Bourg Feuillage,Aucun,Gozreh
 6283,1362,Monrove,Ernestoval,#F0F0F2,ernestoval.webp,Ernestoval est une ville universitaire célèbre pour sa bibliothèque.,Empire,Humain,Ernestoval,Grande Bibliothèque,Nethys
 2108,2877,Taisinia,Tanopea,#F0F0F2,tanopea.webp,Tanopéa est le plus vaste et le plus haut village niché dans la jungle de Taisinia.
 6358,2531,Lagerstätte,Gueulfort,#F0F0F2,gueulfort.webp,"Lagerstatte est un pays créé lors de l'émergence des nains dans Atlas, venus des tréfonds de la terre pour survivre à un cataclysme. Pays minier de par leur expérience raciale, ils sont des alliés ancestraux avec l'Uriel. Dirigé par un roi qui est élu par une compétition d'artisanat tous les 30 ans. Le roi est assisté dans la régence du pays par les Maîtres électeurs, les meilleurs artisans dans chaque domaine. La capitale du pays nommée Karak Ungor est en grande partie souterraine. Les souterrains des nains sont profonds et dangereux, certains de ces tunnels remontent à l'émergence. Une partie des tunnels a été condamnée et mise en quarantaine il y a 150/200 ans, des rumeurs parlent de bruits étranges et de monstres difformes. De par leur proximité et de leur alliance avec l'Uriel, les nains de Lagerstatte possèdent une technologie avancée, qui diverge de leurs voisins en certains points.",Monarchie,"Nains, Uriel",Karak Ungor,"Tunnels souterrains de l'émergence","Aucune mentionnée"
-0,0,Lealand,Lealand : Demeure des Highlanders,,lealand.webp,"Libéré, ré-annexé puis de nouveau libéré du Boren, le Lealand est surtout connu pour sa culture guerrière et pour ses légendaires combattants, les highlanders : ces grands guerriers armés d’immenses épées, causant des ravages dans les rangs de leurs ennemis. Cet ordre est maintenant au service du roi guerrier Walace Mc Leod.",Royauté et conseil,
 6300,1501,Lluire,Temple de Folgrit,#3B2077,folgritTemple.webp,"Un temple dédié à Folgrit ancienne déesse des pleureuses prenant soin des personnes en deuil et épouse du dieu Torag, dieu de la protection et de la création",,"Une vingtaine de Nains, Humains et Halfleins",,,La déesse Folgrit
 
