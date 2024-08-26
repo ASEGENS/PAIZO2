@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img class="rounded" src="img/logo.webp" alt="Logo" style="width: 60px; height: 60px; margin-right: 20px;">
             Pathfinder 2
         </a>        
@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Accueil</a>
+                    <a class="nav-link active" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Personnages
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="commencement.html">Créer un Personnage</a></li>
-                        <li><a class="dropdown-item" href="classes.html">Classes</a></li>
-                        <li><a class="dropdown-item" href="races.html">Races</a></li>
+                        <li><a class="dropdown-item" href="commencement.php">Créer un Personnage</a></li>
+                        <li><a class="dropdown-item" href="classes.php">Classes</a></li>
+                        <li><a class="dropdown-item" href="races.php">Races</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -27,26 +27,22 @@
                         Atlas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtlas">
-                        <li><a class="dropdown-item" href="atlas.html">Lore</a></li>
-                        <li><a class="dropdown-item" href="atlasmap.html" target="_blank">Carte</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGolarion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Golarion
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownGolarion">
-                        <li><a class="dropdown-item" href="golarion.html">Lore</a></li>
-                        <li><a class="dropdown-item" href="https://map.pathfinderwiki.com/#location=5.54/34.237/-2.314">Carte (Pathfinderwiki) &#x1F1EC;&#x1F1E7;</a></li>
+                        <li><a class="dropdown-item" href="atlas.php">Lore</a></li>
+                        <li><a class="dropdown-item" href="atlasmap.php" target="_blank">Carte</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Tuto_PF2e_Foundry.pdf" target="_blank">Tuto Foundry</a>
                 </li>
-                <!-- Remplacer les anciens liens par un lien unique vers la page d'authentification -->
-                <li class="nav-item">
-                    <a class="nav-link" href="auth.php">Connexion / Inscription</a>
-                </li>
+                <?php if (isset($_SESSION['username'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.php"><?php echo htmlspecialchars($_SESSION['username']); ?></a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth.php">Connexion / Inscription</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
