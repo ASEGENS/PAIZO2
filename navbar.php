@@ -1,3 +1,7 @@
+<?php
+session_start(); // Démarrer la session avant toute sortie HTML
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
@@ -47,3 +51,12 @@
         </div>
     </div>
 </nav>
+
+<!-- Vérification de la session pour débogage -->
+<?php
+if (isset($_SESSION['username'])) {
+    echo "Utilisateur connecté : " . htmlspecialchars($_SESSION['username']);
+} else {
+    echo "Pas d'utilisateur connecté.";
+}
+?>
