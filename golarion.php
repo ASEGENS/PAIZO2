@@ -49,7 +49,7 @@
             // Charger la navbar et le footer
             Promise.all([
                 loadHTML('navbar-container', 'navbar.php'),
-                loadHTML('footer-container', 'footer.html')
+                loadHTML('footer-container', 'footer.php')
             ]).then(() => {
                 initializeAccordion();
             });

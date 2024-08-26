@@ -34,7 +34,7 @@
             <h2 class="text-center mb-4">Ressources Utiles</h2>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="https://www.pathfinder-fr.org/Wiki/Pathfinder2.MainPage.ashx" target="_blank">Wiki Pathfinder</a> - Une encyclopédie complète pour toutes les informations sur Pathfinder.</li>
-                <li class="list-group-item"><a href="https://pathbuilder2e.com/app.html" target="_blank">pathbuilder2e</a> - Une ressource très pratique en modèle freemium pour faire sa fiche perso.</li>
+                <li class="list-group-item"><a href="https://pathbuilder2e.com/app.php" target="_blank">pathbuilder2e</a> - Une ressource très pratique en modèle freemium pour faire sa fiche perso.</li>
             </ul>
         </div>
     </section>
@@ -56,7 +56,7 @@
             console.log('DOM fully loaded and parsed');
 
             loadHTML('navbar-container', 'navbar.php');
-            loadHTML('footer-container', 'footer.html');
+            loadHTML('footer-container', 'footer.php');
 
             Papa.parse('races.csv', {
                 download: true,

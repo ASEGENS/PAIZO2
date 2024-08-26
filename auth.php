@@ -70,7 +70,7 @@
         // Charger la navbar et le footer
         document.addEventListener('DOMContentLoaded', function() {
             loadHTML('navbar-container', 'navbar.php');
-            loadHTML('footer-container', 'footer.html');
+            loadHTML('footer-container', 'footer.php');
         });
     </script>
 

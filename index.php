@@ -15,7 +15,7 @@
     <section class="hero text-white text-center" style="background: url('img/bg.png') no-repeat center center; background-size: cover;">
         <div class="container d-flex flex-column justify-content-center align-items-center h-100">
             <h1 class="display-3">Bienvenue dans l'univers Pathfinder 2</h1>
-            <a href="commencement.html" class="btn btn-primary btn-lg mt-3">Commencez votre aventure</a>
+            <a href="commencement.php" class="btn btn-primary btn-lg mt-3">Commencez votre aventure</a>
         </div>
     </section>
 
@@ -28,7 +28,7 @@
                     <p>Pathfinder 2 est un jeu de rôle épique qui vous permet de créer des personnages uniques et de vivre des aventures incroyables. Explorez des terres fantastiques, affrontez des créatures mythiques et utilisez des compétences et des sorts puissants.</p>
                     <p>L'univers de Pathfinder 2 est vaste et riche en histoire. Il se déroule principalement dans le monde de Golarion, un lieu rempli de mystères anciens, de royaumes puissants et de paysages variés. De la cité étincelante d'Absalom aux jungles denses du Mwangi, chaque région offre des défis uniques et des histoires captivantes.</p>
                     <p>En tant qu'aventurier, vous pouvez choisir de défendre les innocents contre des menaces monstrueuses, explorer des ruines oubliées pour des trésors perdus ou naviguer dans la politique complexe des grandes cités. Le système de jeu flexible vous permet de personnaliser votre personnage avec une variété de compétences, de dons et de sorts, ce qui signifie que chaque personnage peut être unique et refléter votre style de jeu.</p>
-                    <a href="golarion.html" class="btn btn-primary mt-3">En savoir plus sur Golarion</a>
+                    <a href="golarion.php" class="btn btn-primary mt-3">En savoir plus sur Golarion</a>
                 </div>
                 <div class="col-md-6">
                     <img src="img/pathfinder2.png" class="img-fluid" alt="Pathfinder 2">
@@ -80,7 +80,7 @@
         // Load the navbar and footer
         document.addEventListener('DOMContentLoaded', function() {
             loadHTML('navbar-container', 'navbar.php');
-            loadHTML('footer-container', 'footer.html');
+            loadHTML('footer-container', 'footer.php');
         });
     </script>
 </body>
