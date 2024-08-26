@@ -1,49 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: auth.php");
-    exit();
-}
-
-include 'db.php'; // Inclure le fichier de connexion à la base de données
-
-$message = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $current_password = $_POST['current_password'];
-    $new_password = $_POST['new_password'];
-    $confirm_password = $_POST['confirm_password'];
-
-    if ($new_password !== $confirm_password) {
-        $message = "Les nouveaux mots de passe ne correspondent pas.";
-    } else {
-        $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
-        $stmt->bind_param("s", $_SESSION['username']);
-        $stmt->execute();
-        $stmt->bind_result($hashed_password);
-        $stmt->fetch();
-
-        if (password_verify($current_password, $hashed_password)) {
-            $new_hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
-            $stmt->close();
-
-            $stmt = $conn->prepare("UPDATE users SET password = ? WHERE username = ?");
-            $stmt->bind_param("ss", $new_hashed_password, $_SESSION['username']);
-            if ($stmt->execute()) {
-                $message = "Mot de passe mis à jour avec succès.";
-            } else {
-                $message = "Erreur lors de la mise à jour du mot de passe.";
-            }
-        } else {
-            $message = "Le mot de passe actuel est incorrect.";
-        }
-        $stmt->close();
-    }
-    $conn->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -63,6 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="alert alert-info"><?php echo htmlspecialchars($message); ?></div>
         <?php endif; ?>
 
+        <h2>Informations de Profil</h2>
+        <form action="account.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="new_username" class="form-label">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="new_username" name="new_username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="profile_picture" class="form-label">Photo de profil</label>
+                <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+            </div>
+            <button type="submit" name="update_profile" class="btn btn-primary">Mettre à jour le profil</button>
+        </form>
+
+        <hr>
+
         <h2>Changer le mot de passe</h2>
         <form action="account.php" method="post">
             <div class="mb-3">
@@ -77,7 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="confirm_password" class="form-label">Confirmer le nouveau mot de passe</label>
                 <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Mettre à jour le mot de passe</button>
+            <button type="submit" name="change_password" class="btn btn-primary">Mettre à jour le mot de passe</button>
+        </form>
+
+        <hr>
+
+        <!-- Bouton de déconnexion -->
+        <form action="logout.php" method="post">
+            <button type="submit" class="btn btn-danger">Déconnexion</button>
         </form>
     </div>
 
