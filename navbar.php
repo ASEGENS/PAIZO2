@@ -51,12 +51,3 @@ session_start(); // Démarrer la session avant toute sortie HTML
         </div>
     </div>
 </nav>
-
-<!-- Vérification de la session pour débogage -->
-<?php
-if (isset($_SESSION['username'])) {
-    echo "Utilisateur connecté : " . htmlspecialchars($_SESSION['username']);
-} else {
-    echo "Pas d'utilisateur connecté.";
-}
-?>
