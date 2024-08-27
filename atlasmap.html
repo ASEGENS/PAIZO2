@@ -112,7 +112,7 @@
                             const pageButton = document.getElementById('pageButton');
                             pageButton.innerHTML = `Page de ${Pays}`;
                             pageButton.onclick = function() {
-                                window.open(`/mapAtlas/atlasLieu.php?pays=${Pays}`, '_blank');
+                                window.open(`/mapAtlas/atlasLieu.html?pays=${Pays}`, '_blank');
                             };
                             modalContent.innerHTML = `
                                 <h5>${row.nom}</h5>
