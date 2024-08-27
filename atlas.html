@@ -58,8 +58,8 @@
 
             // Charger la navbar et le footer
             Promise.all([
-                loadHTML('navbar-container', 'navbar.php'),
-                loadHTML('footer-container', 'footer.php')
+                loadHTML('navbar-container', 'navbar.html'),
+                loadHTML('footer-container', 'footer.html')
             ]).then(() => {
                 initializeAccordion();
                 loadGlobalTimeline();
